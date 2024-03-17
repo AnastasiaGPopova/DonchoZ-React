@@ -2,7 +2,6 @@ import styles from "./Navigation.module.css";
 import { useNavigate } from "react-router-dom";
 import * as data from '../../api/data';
 import { Link } from "react-router-dom";
-import {useSignOut} from 'react-auth-kit'
 import { useContext } from "react";
 import { PaintingsContext } from "../../contexts/PaintingsContext";
 
@@ -11,11 +10,9 @@ function Navigation(){
     const {isLogged} = useContext(PaintingsContext)
 
     const navigate = useNavigate()
-    const singOut = useSignOut()
 
     async function onLogOutClick() {
         data.logout()
-        singOut()
         navigate("/")
     }
 

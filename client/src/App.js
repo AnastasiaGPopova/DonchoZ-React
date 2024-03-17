@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {useAuthUser, RequireAuth} from 'react-auth-kit'
+import {useAuthUser , RequireAuth} from 'react-auth-kit'
 import { Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { PaintingsContext } from './contexts/PaintingsContext';
@@ -10,7 +10,7 @@ import Navigation from './components/Navigation/Navigation';
 import Homepage from './components/Homepage/Homepage'
 
 function App() {
-  const auth = useAuthUser()
+  
   const [isLogged, setIsLogged] = useState(false);
   const [paintingsAbstract, setPaintingsAbstract] = useState([]);
   const [paintingsHorizonts, setPaintingsHorizonts] = useState([]);
@@ -20,13 +20,13 @@ function App() {
   const [loading, setLoading]= useState(false)
 
   useEffect(() => {
-    if (auth()?.email !== undefined) {
+    if (localStorage.getItem('authToken') !== null) {
       setIsLogged(true);
 
     } else {
       setIsLogged(false)
     }
-  }, [auth]);
+  }, []);
 
 
   const contextValue = {

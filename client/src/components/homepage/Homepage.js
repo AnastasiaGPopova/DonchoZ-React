@@ -8,7 +8,9 @@ function Homepage() {
 
 
   return (
-    <div>HELLOOOOOO!!!!</div>
+    <main>
+      <div>HELLOOOOOO!!!!</div>
+    </main>
 
   )
 

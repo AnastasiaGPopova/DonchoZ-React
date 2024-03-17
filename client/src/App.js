@@ -5,7 +5,9 @@ import { Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { PaintingsContext } from './contexts/PaintingsContext';
 
-import Homepage from './components/homepage/Homepage';
+
+import Navigation from './components/Navigation/Navigation';
+import Homepage from './components/Homepage/Homepage'
 
 function App() {
   const auth = useAuthUser()
@@ -43,8 +45,9 @@ function App() {
   return (
     <>
     <PaintingsContext.Provider value={contextValue}>
+    <Navigation/>
       <Routes>
-        <Route path="/" element={<Homepage/>} />
+        <Route path="/" element={<Homepage></Homepage>} />
 
       </Routes>
       </PaintingsContext.Provider>

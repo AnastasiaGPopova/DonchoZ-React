@@ -1,3 +1,15 @@
 main{
-    margin-left: 20rem;
+    margin-left: 23rem;
+}
+
+main div{
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    height: 100vh; /* Adjust as needed */
+}
+
+main div img{
+    width: 1300px; /* Adjust the width as needed */
+    height: auto; /* Automatically adjust height to maintain aspect ratio */
 }

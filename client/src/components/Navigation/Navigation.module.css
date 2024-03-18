@@ -1,28 +1,31 @@
 .navbar {
     position: fixed;
-    top: 0;
+    top: 3rem;
     left: 0;
     height: 100%;
     width: 250px; /* Adjust the width as needed */
-    background-color: lightgray; /* Example background color */
+    background-color: white; /* Example background color */
     color: black; /* Example text color */
     padding: 20px;
     text-align: right;
 
   }
 
-  .headerNEW h3 {
-    color: red;
+  .headerNEW h2 a {
+    color: black;
+    text-decoration: none;
   }
 
   .navbar ul{
     list-style-type: none;
+    z-index: 1;
 
   }
 
   .navbar ul li a{
     color: black;
     text-decoration: none;
+    font-size: 1.5rem;
   }
 
   .navbar ul li{

@@ -45,11 +45,11 @@ function App() {
   return (
     <>
     <PaintingsContext.Provider value={contextValue}>
-    <Navigation/>
       <Routes>
         <Route path="/" element={<Homepage></Homepage>} />
 
       </Routes>
+      <Navigation/>
       </PaintingsContext.Provider>
     </>
 

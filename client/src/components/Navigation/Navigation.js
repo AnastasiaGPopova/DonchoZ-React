@@ -19,10 +19,9 @@ function Navigation(){
     return(
     <div className={styles.headerNEW}>
         <nav className={styles.navbar}>
-        <h2>Doncho Zahariev</h2>
+        <h2><Link to="/">Doncho Zahariev</Link></h2>
             <img src="/images/Logo.png" alt="" className={styles.logo}/>
             <ul>
-            <li> <Link to="/">home</Link></li>
             <li> <Link to="/abstract">abstract series</Link></li>
             <li> <Link to="/horizons">horizons series</Link></li>
             <li> <Link to="/other">other works</Link></li>

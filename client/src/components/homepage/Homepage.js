@@ -6,11 +6,11 @@ import * as data from '../../api/data';
 
 function Homepage() {
 
-
+ 
   return (
     <main>
       <div>
-          <img src="https://drive.google.com/thumbnail?id=1FxjKSCjT9u-xmJS0O32mNQHuAuA08noa&sz=w1000" alt="test"/>
+          <img src="https://drive.google.com/thumbnail?id=11RwVshFEgd8-esWLkt3q6kUu5L6AFmJe&sz=w1000" alt="test"/>
       </div>
     </main>
 

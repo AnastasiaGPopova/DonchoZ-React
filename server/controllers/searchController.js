@@ -1,7 +1,7 @@
 
 const router = require("express").Router();
 
-const recordManager = require("../managers/recordManager");
+const recordManager = require("../managers/paintingManager");
 
 router.post("/", async (req, res) => {
     console.log(`----------TEST SEARCH-----------------`)

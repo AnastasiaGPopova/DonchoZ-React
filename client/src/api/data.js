@@ -16,7 +16,7 @@ export async function getRecords() {
 
 
 export async function getItemById(id) {
-    return await api.get(host + '/records/' + id);
+    return await api.get(host + '/paintings/' + id);
 }
 
 export async function getMyRecords(id) {

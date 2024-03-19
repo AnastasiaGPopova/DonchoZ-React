@@ -16,23 +16,14 @@ router.get("/", async (req, res) => {
 
 
 
-router.get("/:recordId", async (req, res) => {
+router.get("/:paintingsId", async (req, res) => {
 
-  if(req.params.recordId === "myRecords"){
-    const records = await paintingManager.getAllRecordsByOwner(req.user._id)
-    return res.json(records);
-  } else if (req.params.recordId === "wishList") {
-    const records = await paintingManager.getWishList(req.user._id)
-    return res.json(records);
-  } else {
     try {
-      const record = await paintingManager.getOne(req.params.recordId).populate('_ownerId');
+      const record = await paintingManager.getOne(req.params.paintingsId);
       res.json(record);
     } catch (error) {
       return res.json(parser.parseError(error));
     }
-
-  }
 });
 
 

@@ -18,7 +18,10 @@ function CatalogOthers() {
   return (
     <main>
       <div className={styles.catalogContainer}>
-      {paintingsOthers.map((x) => (<SinglePainting key={x._id} {...x} />))}
+      {paintingsOthers.map((x, index) =>{
+        const paintingWithIndex = { ...x, index }
+        return  <SinglePainting key={x._id} {...paintingWithIndex} />
+      })}
       </div>
     </main>
 

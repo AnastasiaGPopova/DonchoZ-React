@@ -8,7 +8,7 @@ import { useContext } from "react";
 
 
 function SinglePainting({
-    _id, paintingName, description, year, imageUrl,genre
+    _id, paintingName, description, year, imageUrl,genre, index
 })  {
 
     const {paintingsAbstract, loading , setLoading} = useContext(PaintingsContext)
@@ -18,9 +18,7 @@ function SinglePainting({
 
   return (
     <div className={styles.picture}>
-        <img src={imageUrl} alt="">
-        </img>
-        <Link to={`/paintings/${_id}`}></Link>
+        <Link to={`/paintings/${_id}/${index}`}><img src={imageUrl} alt=""/></Link>
     </div>
   )
 

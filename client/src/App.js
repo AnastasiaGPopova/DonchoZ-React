@@ -10,6 +10,7 @@ import Navigation from './components/Navigation/Navigation';
 import Homepage from './components/Homepage/Homepage'
 import CatalogAbstract from './components/CatalogAbstract/CatalogAbstract';
 import CatalogOthers from './components/CatalogOthers/CatalogOthers';
+import DetailsPage from './components/DetailsPage/DetailsPage';
 
 function App() {
   
@@ -76,6 +77,7 @@ function App() {
         <Route path="/" element={<Homepage></Homepage>} />
         <Route path="/abstract" element={<CatalogAbstract></CatalogAbstract>} />
         <Route path="/other" element={<CatalogOthers/>} />
+        <Route path="/paintings/:paintingsId/:index" element={<DetailsPage/>}/>
 
       </Routes>
       <Navigation/>

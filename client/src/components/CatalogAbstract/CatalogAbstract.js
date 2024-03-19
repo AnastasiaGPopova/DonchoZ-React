@@ -18,7 +18,10 @@ function CatalogAbstract() {
   return (
     <main>
       <div className={styles.catalogContainer}>
-      {paintingsAbstract.map((x) => (<SinglePainting key={x._id} {...x} />))}
+      {paintingsAbstract.map((x, index) =>{
+        const paintingWithIndex = { ...x, index }
+        return  <SinglePainting key={x._id} {...paintingWithIndex} />
+      })}
       </div>
     </main>
 

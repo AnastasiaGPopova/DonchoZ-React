@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {useAuthUser , RequireAuth} from 'react-auth-kit'
+import * as data from "./api/data";
 import { Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { PaintingsContext } from './contexts/PaintingsContext';
@@ -8,11 +8,14 @@ import { PaintingsContext } from './contexts/PaintingsContext';
 
 import Navigation from './components/Navigation/Navigation';
 import Homepage from './components/Homepage/Homepage'
+import CatalogAbstract from './components/CatalogAbstract/CatalogAbstract';
+import CatalogOthers from './components/CatalogOthers/CatalogOthers';
 
 function App() {
   
   const [isLogged, setIsLogged] = useState(false);
   const [paintingsAbstract, setPaintingsAbstract] = useState([]);
+  const [allPaintings, setAllPaintings] = useState([]);
   const [paintingsHorizonts, setPaintingsHorizonts] = useState([]);
   const [paintingsOthers, setPaintingsOthers] = useState([]);
   const [errorMessages, setErrorMessages] = useState(null);
@@ -27,6 +30,30 @@ function App() {
       setIsLogged(false)
     }
   }, []);
+
+  useEffect(() => {
+    async function getAllRecords() {
+      try {
+        setLoading(true)
+        const allPaints = await data.getRecords();
+        setAllPaintings(allPaints);
+        console.log(`all Paints`)
+        console.log(allPaints)
+        setLoading(false)
+        const absPics = allPaints.filter(x => x.genre === "abstract")
+        console.log(`Filtered Abstract`)
+        console.log(absPics)
+        setPaintingsAbstract(absPics)
+        const otherPics = allPaints.filter(x => x.genre === "other")
+        setPaintingsOthers(otherPics)
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    getAllRecords();
+  }, [isChanged]);
+
+  console.log(paintingsAbstract)
 
 
   const contextValue = {
@@ -47,6 +74,8 @@ function App() {
     <PaintingsContext.Provider value={contextValue}>
       <Routes>
         <Route path="/" element={<Homepage></Homepage>} />
+        <Route path="/abstract" element={<CatalogAbstract></CatalogAbstract>} />
+        <Route path="/other" element={<CatalogOthers/>} />
 
       </Routes>
       <Navigation/>

@@ -10,7 +10,7 @@ export const logout = api.logout;
 
 // Implement application-specific requests
 export async function getRecords() {
-    return await api.get(host + '/records');
+    return await api.get(host + '/paintings');
 }
 
 

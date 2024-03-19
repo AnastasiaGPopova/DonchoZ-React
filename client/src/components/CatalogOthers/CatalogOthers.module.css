@@ -1,0 +1,12 @@
+main {
+    margin-top: 2rem;
+    margin-left: 23rem; 
+  }
+  
+  .catalogContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+  }
+  

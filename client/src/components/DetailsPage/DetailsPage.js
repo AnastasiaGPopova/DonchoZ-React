@@ -59,18 +59,22 @@ function DetailsPage() {
       //------ Set up the navigation
       const handlePictureClick = (event) => {
         const { clientX, clientY } = event;
-        const { innerWidth, innerHeight } = window;
+        const imageContainer = document.querySelector(`.${styles.imageContainer}`);
+        const rect = imageContainer.getBoundingClientRect();
+        const { width, height } = rect;
+        const xRelativeToImage = clientX - rect.left;
+        const yRelativeToImage = clientY - rect.top;
     
-        if (clientX < innerWidth / 4) {
+        if (xRelativeToImage  < width  / 4) {
           // Clicked on the left side
           const prevIndex = currentIndex > 0 ? currentIndex - 1 : currentArray.length - 1;
           console.log(prevIndex)
           navigate(`/paintings/${currentArray[prevIndex]._id}/${prevIndex}`);
-        } else if (clientX > (3 * innerWidth) / 4) {
+        } else if (xRelativeToImage  > (3 * width) / 4) {
           // Clicked on the right side
           const nextIndex = currentIndex < currentArray.length - 1 ? currentIndex + 1 : 0;
           navigate(`/paintings/${currentArray[nextIndex]._id}/${nextIndex}`);
-        } else if (clientY < innerHeight / 4 || clientY > (3 * innerHeight) / 4) {
+        } else if (yRelativeToImage  < height  / 4 || yRelativeToImage  > (3 * height) / 4) {
           // Clicked on the top or bottom side
           navigate(`/${historyPath}`);
         }

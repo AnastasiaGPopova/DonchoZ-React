@@ -8,7 +8,7 @@ function Homepage() {
 
 
   return (
-    <main>
+    <main className={styles.homePageMain}>
       <div>
           <img src="https://drive.google.com/thumbnail?id=1xFCdzfUJ4ASxPLuka2_ardatW4JKfdmb&sz=w1000" alt="test"/>
       </div>

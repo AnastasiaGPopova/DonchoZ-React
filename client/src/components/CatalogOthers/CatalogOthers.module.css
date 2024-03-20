@@ -1,4 +1,4 @@
-main {
+.catalogMain{
     margin-top: 2rem;
     margin-left: 23rem; 
   }
@@ -8,5 +8,6 @@ main {
     flex-wrap: wrap;
     justify-content: center; /* Horizontally center */
     align-items: center; /* Vertically center */
+    align-items: flex-start;
   }
   

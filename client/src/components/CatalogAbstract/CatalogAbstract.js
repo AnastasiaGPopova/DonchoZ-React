@@ -16,7 +16,7 @@ function CatalogAbstract() {
     console.log(paintingsAbstract)
 
   return (
-    <main>
+    <main className={styles.CatalogMain} >
       <div className={styles.catalogContainer}>
       {paintingsAbstract.map((x, index) =>{
         const paintingWithIndex = { ...x, index }

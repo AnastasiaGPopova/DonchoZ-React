@@ -16,7 +16,7 @@ function CatalogOthers() {
     console.log(paintingsOthers)
 
   return (
-    <main>
+    <main className={styles.catalogMain}>
       <div className={styles.catalogContainer}>
       {paintingsOthers.map((x, index) =>{
         const paintingWithIndex = { ...x, index }

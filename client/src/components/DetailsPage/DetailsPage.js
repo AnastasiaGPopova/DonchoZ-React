@@ -83,17 +83,17 @@ function DetailsPage() {
       const handleMouseMove = (event) => {
         const imageContainer = document.querySelector(`.${styles.imageContainer}`);
         const rect = imageContainer.getBoundingClientRect();
-        const x = event.clientX - rect.left;
-
-        if (x <= rect.width / 4) {
-            imageContainer.style.cursor = "w-resize";
-        } else if (x >= (3 * rect.width) / 4) {
-            imageContainer.style.cursor = "e-resize";
+        const xRelativeToContainer = event.clientX - rect.left;
+        const yRelativeToContainer = event.clientY - rect.top;
+    
+        if (xRelativeToContainer <= rect.width / 4 || xRelativeToContainer >= (3 * rect.width) / 4) {
+            imageContainer.style.cursor = "ew-resize"; // Horizontal resize cursor
+        } else if (yRelativeToContainer <= rect.height / 4 || yRelativeToContainer >= (3 * rect.height) / 4) {
+            imageContainer.style.cursor = "ns-resize"; // Vertical resize cursor
         } else {
-            imageContainer.style.cursor = "auto";
+            imageContainer.style.cursor = "auto"; // Default cursor
         }
-     };
-
+    };
 
   return (
     <main>

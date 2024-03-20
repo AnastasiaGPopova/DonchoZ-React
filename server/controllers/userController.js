@@ -4,9 +4,10 @@ const parser = require('../utils/parser')
 const userManager = require('../managers/userManager');
 
 router.post('/register', async (req, res) => {
-    const { email, password, rePassword, gender } = req.body;
+    console.log(`test register`)
+    const { email, password } = req.body;
     try{
-    const result = await userManager.register(email, password, rePassword, gender);
+    const result = await userManager.register(email, password);
     res.json(result);
     }catch(err){
         const erM = parser.parseError(err)

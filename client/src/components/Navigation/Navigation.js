@@ -9,13 +9,14 @@ import { PaintingsContext } from "../../contexts/PaintingsContext";
 
 function Navigation(){
     const [activeMenuItem, setActiveMenuItem] = useState(null);
-    const {isLogged} = useContext(PaintingsContext)
+    const {isLogged, setIsLogged} = useContext(PaintingsContext)
 
     const navigate = useNavigate()
 
     async function onLogOutClick() {
         data.logout()
         navigate("/")
+        setIsLogged(false)
     }
 
     const handleMenuItemClick = (menuItem) => {

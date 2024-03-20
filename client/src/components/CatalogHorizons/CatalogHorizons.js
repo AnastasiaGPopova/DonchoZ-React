@@ -1,4 +1,4 @@
-import styles from "./CatalogHorizons.css";
+import styles from "./CatalogHorizons.module.css";
 import { useNavigate } from "react-router-dom";
 import {useEffect, useState } from "react";
 import * as data from '../../api/data';
@@ -11,8 +11,6 @@ import SinglePainting from "../SinglePainting/SinglePainting";
 function CatalogHorizons() {
 
     const {paintingsHorizonts, loading , setLoading} = useContext(PaintingsContext)
-
-
     console.log(paintingsHorizonts)
 
   return (

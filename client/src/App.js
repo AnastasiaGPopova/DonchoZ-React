@@ -12,6 +12,7 @@ import CatalogAbstract from './components/CatalogAbstract/CatalogAbstract';
 import CatalogOthers from './components/CatalogOthers/CatalogOthers';
 import DetailsPage from './components/DetailsPage/DetailsPage';
 import CatalogHorizons from './components/CatalogHorizons/CatalogHorizons';
+import LoginPage from './components/LoginPage/LoginPage';
 
 function App() {
   
@@ -79,6 +80,7 @@ function App() {
         <Route path="/abstract" element={<CatalogAbstract></CatalogAbstract>} />
         <Route path="/other" element={<CatalogOthers/>} />
         <Route path="/horizons" element={<CatalogHorizons/>} />
+        <Route path="/admin/login" element={<LoginPage/>} />
         <Route path="/paintings/:paintingsId/:index" element={<DetailsPage/>}/>
 
       </Routes>

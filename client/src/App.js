@@ -11,6 +11,7 @@ import Homepage from './components/Homepage/Homepage'
 import CatalogAbstract from './components/CatalogAbstract/CatalogAbstract';
 import CatalogOthers from './components/CatalogOthers/CatalogOthers';
 import DetailsPage from './components/DetailsPage/DetailsPage';
+import CatalogHorizons from './components/CatalogHorizons/CatalogHorizons';
 
 function App() {
   
@@ -41,12 +42,12 @@ function App() {
         console.log(`all Paints`)
         console.log(allPaints)
         setLoading(false)
-        const absPics = allPaints.filter(x => x.genre === "abstract")
-        console.log(`Filtered Abstract`)
-        console.log(absPics)
-        setPaintingsAbstract(absPics)
+        const abstractPics = allPaints.filter(x => x.genre === "abstract")
+        setPaintingsAbstract(abstractPics)
         const otherPics = allPaints.filter(x => x.genre === "other")
         setPaintingsOthers(otherPics)
+        const horizonPics = allPaints.filter(x => x.genre === "horizon")
+        setPaintingsHorizonts(horizonPics)
       } catch (error) {
         console.log(error);
       }
@@ -77,6 +78,7 @@ function App() {
         <Route path="/" element={<Homepage></Homepage>} />
         <Route path="/abstract" element={<CatalogAbstract></CatalogAbstract>} />
         <Route path="/other" element={<CatalogOthers/>} />
+        <Route path="/horizons" element={<CatalogHorizons/>} />
         <Route path="/paintings/:paintingsId/:index" element={<DetailsPage/>}/>
 
       </Routes>

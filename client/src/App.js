@@ -13,6 +13,7 @@ import CatalogOthers from './components/CatalogOthers/CatalogOthers';
 import DetailsPage from './components/DetailsPage/DetailsPage';
 import CatalogHorizons from './components/CatalogHorizons/CatalogHorizons';
 import LoginPage from './components/LoginPage/LoginPage';
+import CreatePage from './components/CreatePage/CreatePage';
 
 function App() {
   
@@ -43,11 +44,11 @@ function App() {
         console.log(`all Paints`)
         console.log(allPaints)
         setLoading(false)
-        const abstractPics = allPaints.filter(x => x.genre === "abstract")
+        const abstractPics = allPaints.filter(x => x.genre.includes("abstract"))
         setPaintingsAbstract(abstractPics)
-        const otherPics = allPaints.filter(x => x.genre === "other")
+        const otherPics = allPaints.filter(x => x.genre.includes("other"))
         setPaintingsOthers(otherPics)
-        const horizonPics = allPaints.filter(x => x.genre === "horizon")
+        const horizonPics = allPaints.filter(x => x.genre.includes("horizon"))
         setPaintingsHorizonts(horizonPics)
       } catch (error) {
         console.log(error);
@@ -81,6 +82,7 @@ function App() {
         <Route path="/other" element={<CatalogOthers/>} />
         <Route path="/horizons" element={<CatalogHorizons/>} />
         <Route path="/admin/login" element={<LoginPage/>} />
+        <Route path="/create" element={<CreatePage/>} />
         <Route path="/paintings/:paintingsId/:index" element={<DetailsPage/>}/>
 
       </Routes>

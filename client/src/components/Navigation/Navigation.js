@@ -37,11 +37,12 @@ function Navigation(){
             <li> <Link to="/links">links</Link></li>
             <li> <Link to="/about">about</Link></li>
             <li> <Link to="/contacts">contatcs</Link></li>
+            <br></br>
+            <br></br>
 
                 { isLogged ?
                  (<>
-                 <li> <Link to="/create">CREATE</Link></li>
-                 <li> <Link to="/myProfile">MY PROFILE</Link></li>
+                 <li> <Link to="/create">Add painting</Link></li>
                  <li> <Link to="" onClick={onLogOutClick}>LOGOUT</Link></li>
                  </>) : ''
                 } 

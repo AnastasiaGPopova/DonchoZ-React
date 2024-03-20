@@ -10,7 +10,7 @@ import * as data from "../api/data";
 
 export const useForm = (initialGenrs, initialpaintingValue, command, paintingID, index) =>{
   const navigate = useNavigate()
-  const {setErrorMessages, setRecords, setIsChanged, errorMessages} = useContext(PaintingsContext)
+  const {setErrorMessages, setAllPaintings, setIsChanged, errorMessages} = useContext(PaintingsContext)
   const [paintingValue, setpaintingValue] = useState(initialpaintingValue);
   const [genres, setGenres] = useState(initialGenrs);
 
@@ -50,7 +50,7 @@ export const useForm = (initialGenrs, initialpaintingValue, command, paintingID,
   
       let response
       if(command === "create"){
-          response = await data.createRecord(body);
+          response = await data.createPainting(body);
 
       } else if (command === "edit")  {
           response = await data.editRecord(paintingID, body)
@@ -63,13 +63,13 @@ export const useForm = (initialGenrs, initialpaintingValue, command, paintingID,
           setErrorMessages(null)
         },3000)
       } else {
-        setRecords(state => [...state, response]);
+        setAllPaintings(state => [...state, response]);
         setErrorMessages(null)
         setIsChanged(response)
         if(command === "create"){
-          navigate("/catalog");
+          navigate("/");
       } else if (command === "edit")  {
-          navigate(`/paintings/${paintingID}/${index}`)
+          //navigate(`/paintings/${paintingID}/${index}`)
       }    
       }
     };

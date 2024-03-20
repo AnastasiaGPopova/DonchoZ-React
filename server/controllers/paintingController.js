@@ -30,32 +30,25 @@ router.get("/:paintingsId", async (req, res) => {
 
 router.post("/", async (req, res) => {
 
-  // recordName: recordValues.recordName,
-  // artist: recordValues.artist,
-  // year: recordValues.year,
-  // imageUrl: recordValues.imageUrl,
-  // description: recordValues.description,
-  // rpm: recordValues.rpm,
-  // genre: realGenre,
 
-  const {recordName, artist, year, imageUrl, description, genre, rpm} = req.body;
-  const existingRecord = await paintingManager.getExisting(recordName)
+  const {paintingName, year, imageUrl, description, genre} = req.body;
+  const existingRecord = await paintingManager.getExisting(paintingName)
 
 
   try {
 
-    if(!recordName || !artist || !year || !imageUrl || !description || !genre || !rpm){
+    if(!paintingName || !year || !imageUrl || !description || !genre){
       throw new Error (`All fields are requiered!`)
     }
 
     if(existingRecord){
-      throw new Error (`This record already exist in our catalog!`)
+      throw new Error (`This painting name already exist in our catalog!`)
     }
 
 
-    const record = await paintingManager.create({recordName, artist, year, imageUrl, description, genre, rpm, _ownerId: req.user._id});
+    const painting = await paintingManager.create({paintingName, year, imageUrl, description, genre});
 
-    res.json({ _id: record._id });
+    res.json({ _id: painting._id });
   } catch (error) {
     return res.json(parser.parseError(error))
   }

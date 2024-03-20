@@ -41,8 +41,6 @@ function App() {
         setLoading(true)
         const allPaints = await data.getRecords();
         setAllPaintings(allPaints);
-        console.log(`all Paints`)
-        console.log(allPaints)
         setLoading(false)
         const abstractPics = allPaints.filter(x => x.genre.includes("abstract"))
         setPaintingsAbstract(abstractPics)
@@ -57,7 +55,6 @@ function App() {
     getAllRecords();
   }, [isChanged]);
 
-  console.log(paintingsAbstract)
 
 
   const contextValue = {
@@ -70,7 +67,8 @@ function App() {
     setErrorMessages,
     paintingsAbstract, setPaintingsAbstract,
     paintingsHorizonts, setPaintingsHorizonts,
-    paintingsOthers, setPaintingsOthers
+    paintingsOthers, setPaintingsOthers,
+    allPaintings, setAllPaintings
     }
 
   return (

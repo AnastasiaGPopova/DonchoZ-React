@@ -31,9 +31,9 @@ export async function getMyWishList(id) {
     return response
 }
 
-export async function createRecord(data) {
+export async function createPainting(data) {
 
-        const response = await api.post(host + '/records', data);
+        const response = await api.post(host + '/paintings', data);
         console.log(response)
         return response
 }

@@ -76,6 +76,20 @@ function DetailsPage() {
         }
       };
 
+      const handleMouseMove = (event) => {
+        const imageContainer = document.querySelector(`.${styles.imageContainer}`);
+        const rect = imageContainer.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+
+        if (x <= rect.width / 4) {
+            imageContainer.style.cursor = "w-resize";
+        } else if (x >= (3 * rect.width) / 4) {
+            imageContainer.style.cursor = "e-resize";
+        } else {
+            imageContainer.style.cursor = "auto";
+        }
+     };
+
 
   return (
     <main>
@@ -86,9 +100,9 @@ function DetailsPage() {
                 <p>TEST TESTTEST TESTTEST TESTTEST TESTTEST TESTTEST TEST</p>
             </nav>
         </div>
-
-        <div onClick={handlePictureClick}>
-            <img src={currentPainting.imageUrl} alt=""/>
+        {/* onMouseMove={handleMouseMove} */}
+        <div className={styles.imageContainer} onClick={handlePictureClick} onMouseMove={handleMouseMove}>
+            <img className={styles.image} src={currentPainting.imageUrl} alt=""/>
         </div>
 
     </main>

@@ -1,6 +1,6 @@
 
 
-button{
+.submitButton{
     width: 100px;
     padding: 15px 0;
     text-align: center;
@@ -17,7 +17,7 @@ button{
     overflow: hidden;
 }
 
-span{
+.submitButton span{
     background: lightgray;
     height: 100%;
     width: 0%;
@@ -29,11 +29,11 @@ span{
     transition: 0.5s;
 }
 
-button:hover span{
+.submitButton:hover span{
     width: 100%;
 }
 
-button:hover{
+.submitButton:hover{
     border: none;
     color: white;
 }

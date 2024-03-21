@@ -121,27 +121,28 @@ function DetailsPage() {
             </nav>
         </div>
 
-        <div className={styles.imageContainer} onClick={handlePictureClick} onMouseMove={handleMouseMove}>
-            <img className={styles.image} src={currentPainting.imageUrl} alt=""/>
-        </div>
-
-        {isLogged=== true && 
-          <div className={styles.buttons}>
-              <>
-              <button>
-                  <Link to={`/paintings/${currentPainting._id}/edit`}
-                    className={styles.btnedit}
-                  >
-                    Edit
-                  </Link>
-              </button>
-              <button className={styles.btndelete}
-                    onClick={() => onDeleteClick(paintingsId)}>
-                    Delete
-              </button>
-                </>
+        <article className={styles.detailsContainer}>
+          <div className={styles.imageContainer} onClick={handlePictureClick} onMouseMove={handleMouseMove}>
+              <img className={styles.image} src={currentPainting.imageUrl} alt=""/>
           </div>
-        }          
+          <br></br>
+
+          {isLogged=== true && 
+            <div className={styles.buttonsDiv}>
+                <button className={styles.btnedit}>
+                    <Link to={`/paintings/${currentPainting._id}/edit`}
+                    >
+                      Edit
+                    </Link>
+                </button>
+                <button className={styles.btndelete}
+                      onClick={() => onDeleteClick(paintingsId)}>
+                      Delete
+                </button>
+            </div>
+          }  
+          <br></br>  
+        </article>    
 
 
     </main>

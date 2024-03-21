@@ -9,7 +9,7 @@ export const register = api.register;
 export const logout = api.logout;
 
 // Implement application-specific requests
-export async function getRecords() {
+export async function getPaintings() {
     return await api.get(host + '/paintings');
 }
 
@@ -19,17 +19,6 @@ export async function getItemById(id) {
     return await api.get(host + '/paintings/' + id);
 }
 
-export async function getMyRecords(id) {
- 
-    const response = await api.get(host + `/records/` + id);
-    return response
-}
-
-export async function getMyWishList(id) {
- 
-    const response = await api.get(host + `/records/` + id);
-    return response
-}
 
 export async function createPainting(data) {
 
@@ -48,33 +37,22 @@ export async function editRecord(id, data) {
 
 
 
-export async function searchFunction(data) {
-    try{
-        return await api.post(host + '/search', data);
+// export async function searchFunction(data) {
+//     try{
+//         return await api.post(host + '/search', data);
         
-    }catch(error){
-        console.log(error)
-    }
+//     }catch(error){
+//         console.log(error)
+//     }
+// }
+
+
+
+export async function deletePainting(id) {
+    return await api.del(host + '/paintings/' + id);
 }
 
 
-
-export async function deleteRecord(id) {
-    return await api.del(host + '/records/' + id);
-}
-
-
-export async function addComment(data) {
-
-    const response = await api.post(host + '/comments', data);
-    console.log(response)
-    return response
-}
-
-
-export async function getAllCommentsForRecord(id) {
-    return await api.get(host + '/comments/' + id);
-}
 
 export async function getUser() {
  
@@ -83,6 +61,4 @@ export async function getUser() {
 }
 
 
-export async function deleteAllCommentsbyUser(id) {
-    return await api.post(host + '/comments/' + id);
-}
+

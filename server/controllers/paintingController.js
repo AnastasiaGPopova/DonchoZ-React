@@ -55,11 +55,11 @@ router.post("/", async (req, res) => {
 });
 
 
-router.put("/:recordId", async (req, res) => {
+router.put("/:paintingsId", async (req, res) => {
   //to DO validations for empty fields
   //const {........} = req.body
   let isOwner = true;
-  let currentRecord = await paintingManager.getOne(req.params.recordId);
+  let currentRecord = await paintingManager.getOne(req.params.paintingsId);
   const {recordName, artist, year, imageUrl, description, genre, rpm, likes, wishingList, likedBy} = req.body;
   console.log(likes)
   console.log(wishingList)
@@ -70,7 +70,7 @@ router.put("/:recordId", async (req, res) => {
         throw new Error (`All fields are requiered!`)
       }
 
-    const updatredRecord =  await paintingManager.update(req.params.recordId, {recordName, artist, year, imageUrl, description, genre, rpm, likes, wishingList, likedBy});
+    const updatredRecord =  await paintingManager.update(req.params.paintingsId, {recordName, artist, year, imageUrl, description, genre, rpm, likes, wishingList, likedBy});
     res.json(updatredRecord);
     } catch (error) {
       console.log(error)
@@ -78,18 +78,12 @@ router.put("/:recordId", async (req, res) => {
     }
 });
 
-router.delete("/:recordId", async (req, res) => {
+router.delete("/:paintingsId", async (req, res) => {
 
-  let isOwner = true;
-  let currentRecord = await paintingManager.getOne(req.params.recordId);
-  if(currentRecord._ownerId !== req.user._id){
-    isOwner = false
-  }
+  let currentPainting = await paintingManager.getOne(req.params.paintingsId);
+
     try {
-      // if(!isOwner){
-      //   throw new Error(`You are not authotized!`)
-      // }
-      await paintingManager.delete(req.params.recordId);
+      await paintingManager.delete(req.params.paintingsId);
       res.json({ ok: true });
     } catch (error) {
           return res.json(parser.parseError(error))

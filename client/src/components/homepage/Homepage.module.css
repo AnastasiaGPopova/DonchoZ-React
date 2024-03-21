@@ -3,7 +3,7 @@
     margin-left: 27rem; 
   }
   
-  main div {
+  .homePageMain div {
     margin: 0 auto;
     display: flex;
     justify-content: center; /* Horizontally center */
@@ -11,7 +11,7 @@
   }
   
 
-main div img{
+.homePageMain div img{
     width: 1320px; /* Adjust the width as needed */
     height: auto; /* Automatically adjust height to maintain aspect ratio */
 }

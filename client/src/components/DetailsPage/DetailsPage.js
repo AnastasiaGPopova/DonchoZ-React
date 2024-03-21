@@ -18,9 +18,9 @@ function DetailsPage() {
     const [currentPainting, setCurrentPainting] = useState({});
     const [currentArray, setcurrentArray] = useState({});
     const [historyPath, setHistoryPath] = useState({});
-    const { setIsChanged, loading, setLoading, paintingsAbstract, setPaintingsAbstract,
-            paintingsHorizonts, setPaintingsHorizonts,
-            paintingsOthers, setPaintingsOthers} = useContext(PaintingsContext)
+    const { setIsChanged, loading, setLoading, paintingsAbstract,
+            paintingsHorizonts,
+            paintingsOthers, isLogged, isChanged, setAllPaintings} = useContext(PaintingsContext)
 
     useEffect(() => {
         async function getCurrent() {
@@ -50,10 +50,7 @@ function DetailsPage() {
         }
     
         getCurrent();
-      }, [paintingsId,setcurrentArray, setHistoryPath, setLoading, navigate]);
-
-      console.log(`current array`)
-      console.log(currentArray)
+      }, [paintingsId,setcurrentArray, setHistoryPath, paintingsAbstract, paintingsHorizonts,paintingsOthers, isChanged, setLoading, navigate]);
 
 
       //------ Set up the navigation
@@ -69,10 +66,12 @@ function DetailsPage() {
           // Clicked on the left side
           const prevIndex = currentIndex > 0 ? currentIndex - 1 : currentArray.length - 1;
           console.log(prevIndex)
+          setIsChanged(prevIndex)
           navigate(`/paintings/${currentArray[prevIndex]._id}/${prevIndex}`);
         } else if (xRelativeToImage  > (3 * width) / 4) {
           // Clicked on the right side
           const nextIndex = currentIndex < currentArray.length - 1 ? currentIndex + 1 : 0;
+          setIsChanged(nextIndex)
           navigate(`/paintings/${currentArray[nextIndex]._id}/${nextIndex}`);
         } else if (yRelativeToImage  < height  / 4 || yRelativeToImage  > (3 * height) / 4) {
           // Clicked on the top or bottom side
@@ -80,6 +79,7 @@ function DetailsPage() {
         }
       };
 
+      //---------- Mouse Move------------
       const handleMouseMove = (event) => {
         const imageContainer = document.querySelector(`.${styles.imageContainer}`);
         const rect = imageContainer.getBoundingClientRect();
@@ -95,19 +95,54 @@ function DetailsPage() {
         }
     };
 
+    // ------- On Delete Click -----------
+    async function onDeleteClick(id){
+      const choice = window.confirm("Are you sure you want to delete this item?");
+      if(choice === true){
+          const res = await data.deletePainting(id);
+          setAllPaintings(state => (state.filter(x => x._id !== id)));
+          setIsChanged(res)
+          navigate('/');
+      }
+  }
+
+
   return (
     <main>
         <div className={styles.headerNEW}>
             <nav className={styles.navbar}>
                 <h2><Link to="/">Doncho Zahariev</Link></h2>
 
-                <p>TEST TESTTEST TESTTEST TESTTEST TESTTEST TESTTEST TEST</p>
+               <div className={styles.detailsInfo}>
+                  <p>{currentPainting.paintingName}</p>
+                  <p>{currentPainting.year}</p>
+                  <p>{currentPainting.description}</p>
+                </div>
             </nav>
         </div>
-        {/* onMouseMove={handleMouseMove} */}
+
         <div className={styles.imageContainer} onClick={handlePictureClick} onMouseMove={handleMouseMove}>
             <img className={styles.image} src={currentPainting.imageUrl} alt=""/>
         </div>
+
+        {isLogged=== true && 
+          <div className={styles.buttons}>
+              <>
+              <button>
+                  <Link to={`/paintings/${currentPainting._id}/edit`}
+                    className={styles.btnedit}
+                  >
+                    Edit
+                  </Link>
+              </button>
+              <button className={styles.btndelete}
+                    onClick={() => onDeleteClick(paintingsId)}>
+                    Delete
+              </button>
+                </>
+          </div>
+        }          
+
 
     </main>
 

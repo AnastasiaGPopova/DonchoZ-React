@@ -37,9 +37,10 @@ function App() {
 
   useEffect(() => {
     async function getAllRecords() {
+      console.log(`Is triggered`)
       try {
         setLoading(true)
-        const allPaints = await data.getRecords();
+        const allPaints = await data.getPaintings();
         setAllPaintings(allPaints);
         setLoading(false)
         const abstractPics = allPaints.filter(x => x.genre.includes("abstract"))

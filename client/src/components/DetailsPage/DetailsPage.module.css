@@ -44,3 +44,14 @@
 
 }   
 
+
+.detailsInfo{
+  display: flex;
+  flex-direction: column;
+}
+
+.detailsInfo p {
+  padding: 0;
+  margin: 0;
+}
+

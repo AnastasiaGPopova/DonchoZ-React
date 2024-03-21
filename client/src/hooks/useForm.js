@@ -21,8 +21,6 @@ export const useForm = (initialGenrs, initialpaintingValue, command, paintingID,
       console.log(e.target.id)
       console.log(e.target.checked)
       setGenres((state) => ({ ...state, [e.target.id]: e.target.checked }));
-       console.log(paintingValue)
-       console.log(genres)
     };
   
 

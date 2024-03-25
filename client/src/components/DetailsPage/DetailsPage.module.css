@@ -1,3 +1,15 @@
+.detailsMain {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  margin-top: 2rem;
+  margin-left: 0rem; 
+  height: 100vh;
+}
+
+
+
+
 .navbar {
     position: fixed;
     top: 3rem;
@@ -20,14 +32,6 @@
     text-decoration: none;
   }
 
-  .detailsMain {
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    margin-top: 2rem;
-    margin-left: 0rem; 
-    height: 100vh;
-  }
 
   .imageContainer {
     display: flex;

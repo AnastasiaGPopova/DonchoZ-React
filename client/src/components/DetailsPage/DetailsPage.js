@@ -50,7 +50,7 @@ function DetailsPage() {
         }
     
         getCurrent();
-      }, [paintingsId,setcurrentArray, setHistoryPath, paintingsAbstract, paintingsHorizonts,paintingsOthers, isChanged, setLoading, navigate]);
+      }, [paintingsId,setcurrentArray, setHistoryPath, paintingsAbstract, isLogged, paintingsHorizonts,paintingsOthers, isChanged, setLoading, navigate]);
 
 
       //------ Set up the navigation
@@ -108,7 +108,7 @@ function DetailsPage() {
 
 
   return (
-    <main className="detailsMain">
+    <main className={styles.detailsMain}>
         <div className={styles.headerNEW}>
             <nav className={styles.navbar}>
                 <h2><Link to="/">Doncho Zahariev</Link></h2>
@@ -143,8 +143,6 @@ function DetailsPage() {
           }  
           <br></br>  
         </article>    
-
-
     </main>
 
   )

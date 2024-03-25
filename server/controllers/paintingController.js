@@ -60,18 +60,17 @@ router.put("/:paintingsId", async (req, res) => {
   //const {........} = req.body
   let isOwner = true;
   let currentRecord = await paintingManager.getOne(req.params.paintingsId);
-  const {recordName, artist, year, imageUrl, description, genre, rpm, likes, wishingList, likedBy} = req.body;
-  console.log(likes)
-  console.log(wishingList)
+  const {paintingName, year, imageUrl, description, genre} = req.body;
+
 
   try {
 
-    if(!recordName || !artist || !year || !imageUrl || !description || !genre || !rpm){
+    if(!paintingName || !year || !imageUrl || !description || !genre){
         throw new Error (`All fields are requiered!`)
       }
 
-    const updatredRecord =  await paintingManager.update(req.params.paintingsId, {recordName, artist, year, imageUrl, description, genre, rpm, likes, wishingList, likedBy});
-    res.json(updatredRecord);
+    const updatredPainting =  await paintingManager.update(req.params.paintingsId, {paintingName, year, imageUrl, description, genre});
+    res.json(updatredPainting);
     } catch (error) {
       console.log(error)
       return res.json(parser.parseError(error))

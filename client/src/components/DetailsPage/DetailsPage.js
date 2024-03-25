@@ -130,7 +130,7 @@ function DetailsPage() {
           {isLogged=== true && 
             <div className={styles.buttonsDiv}>
                 <button className={styles.btnedit}>
-                    <Link to={`/paintings/${currentPainting._id}/edit`}
+                    <Link to={`/paintings/${currentPainting._id}/edit/${index}`}
                     >
                       Edit
                     </Link>

@@ -27,9 +27,9 @@ export async function createPainting(data) {
         return response
 }
 
-export async function editRecord(id, data) {
+export async function editPainting(id, data) {
     try{
-        return await api.put(host + '/records/' + id, data);
+        return await api.put(host + '/paintings/' + id, data);
     }catch(error){
         console.log(error)
     }

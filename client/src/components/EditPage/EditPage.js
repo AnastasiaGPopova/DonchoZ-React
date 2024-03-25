@@ -1,18 +1,41 @@
 
-import styles from "./CreatePage.module.css";
+import styles from "./EditPage.module.css";
 import { useForm } from "../../hooks/useForm";
-import { useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import * as data from "../../api/data";
 
 
-function CreatePage() {
-const {paintingValue, onChangeHandler, onSubmitHandler, errorMessages} = useForm({},{}, {
+function EditPage() {
+    const {paintingsId, index } = useParams()
+    const navigate = useNavigate()
+
+
+    const {paintingValue, onChangeHandler, 
+           onSubmitHandler, errorMessages,genres,
+           setpaintingValue, setGenres} = useForm(index ,{}, {
     paintingName: "",
     year: "",
     imageUrl: "",
     description: "",
     genre: ""
-  }, 'create')
+  }, 'edit', paintingsId)
 
+
+
+  useEffect(() => {
+    async function getCurrent(){
+        const response = await data.getItemById(paintingsId)
+        setpaintingValue(response)
+        console.log(response)
+        for(const key of response.genre.split(", ")){
+            setGenres(state=> ({...state, [key]: true}))
+          }
+    }
+    getCurrent()
+}, [paintingsId, setGenres, setpaintingValue])
+
+console.log(paintingValue)
 
   return (
     <div className={styles.hero}>
@@ -32,7 +55,7 @@ const {paintingValue, onChangeHandler, onSubmitHandler, errorMessages} = useForm
             id="paintingName"
             name="paintingName"
             placeholder="Write you record name..."
-            value={paintingValue.paintingName}
+            value={paintingValue.paintingName || ""}
             onChange={onChangeHandler}
           />
         </div>
@@ -46,7 +69,7 @@ const {paintingValue, onChangeHandler, onSubmitHandler, errorMessages} = useForm
             id="year"
             name="year"
             placeholder="Write the year..."
-            value={paintingValue.year}
+            value={paintingValue.year || ""}
             onChange={onChangeHandler}
           />
         </div>
@@ -60,7 +83,7 @@ const {paintingValue, onChangeHandler, onSubmitHandler, errorMessages} = useForm
             id="imageurl"
             name="imageUrl"
             placeholder="Write the image url..."
-            value={paintingValue.imageUrl}
+            value={paintingValue.imageUrl || ""}
             onChange={onChangeHandler}
           />
         </div>
@@ -74,7 +97,7 @@ const {paintingValue, onChangeHandler, onSubmitHandler, errorMessages} = useForm
             id="description"
             name="description"
             placeholder="Write description..."
-            value={paintingValue.description}
+            value={paintingValue.description || ""}
             onChange={onChangeHandler}
           />
         </div>
@@ -92,7 +115,7 @@ const {paintingValue, onChangeHandler, onSubmitHandler, errorMessages} = useForm
               id="abstract"
               name="genre"
               onChange={onChangeHandler}
-              checked={paintingValue.abstract}
+              checked={genres["abstract"] || false }
             />
           </div>
 
@@ -106,7 +129,7 @@ const {paintingValue, onChangeHandler, onSubmitHandler, errorMessages} = useForm
               id="horizon"
               name="genre"
               onChange={onChangeHandler}
-              checked={paintingValue.horizon}
+              checked={genres["horizon"] || false}
             />
           </div>
 
@@ -120,10 +143,12 @@ const {paintingValue, onChangeHandler, onSubmitHandler, errorMessages} = useForm
               id="other"
               name="genre"
               onChange={onChangeHandler}
-              checked={paintingValue.other}
+              checked={genres["other"] || false}
             />
           </div>
-        </div>
+        </div> 
+
+
 
         <br/>
         <br></br>
@@ -132,11 +157,11 @@ const {paintingValue, onChangeHandler, onSubmitHandler, errorMessages} = useForm
           type="button"
           onClick={onSubmitHandler}
         >
-          <span></span>CREATE RECORD{" "}
+          <span></span>EDIT RECORD{" "}
         </button>
       </form>
     </div>
   );
 }
 
-export default CreatePage;
+export default EditPage;

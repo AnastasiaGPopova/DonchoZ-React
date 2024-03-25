@@ -14,6 +14,7 @@ import DetailsPage from './components/DetailsPage/DetailsPage';
 import CatalogHorizons from './components/CatalogHorizons/CatalogHorizons';
 import LoginPage from './components/LoginPage/LoginPage';
 import CreatePage from './components/CreatePage/CreatePage';
+import EditPage from './components/EditPage/EditPage';
 
 function App() {
   
@@ -83,6 +84,7 @@ function App() {
         <Route path="/admin/login" element={<LoginPage/>} />
         <Route path="/create" element={<CreatePage/>} />
         <Route path="/paintings/:paintingsId/:index" element={<DetailsPage/>}/>
+        <Route path="/paintings/:paintingsId/edit/:index" element={<EditPage/>}/>
 
       </Routes>
       <Navigation/>

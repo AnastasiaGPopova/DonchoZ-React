@@ -9,11 +9,11 @@ exports.getOne = (id) => Painting.findById(id);
 
 exports.getAll = () => Painting.find().sort({createdAt: -1})
 
-exports.create = (recordData) => Painting.create(recordData);
+exports.create = (paintingData) => Painting.create(paintingData);
 
 exports.getExisting = (recordname) => Painting.findOne({"paintingName": `${recordname}`});
 
-exports.update = (id, recordData) => Painting.findByIdAndUpdate(id, recordData, {runValidators: true});
+exports.update = (id, paintingID) => Painting.findByIdAndUpdate(id, paintingID, {runValidators: true});
 
 exports.delete = (id) => Painting.findByIdAndDelete(id);
 

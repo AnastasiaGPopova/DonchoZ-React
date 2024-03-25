@@ -8,11 +8,12 @@ import * as data from "../api/data";
 
 ////Original
 
-export const useForm = (initialGenrs, initialpaintingValue, command, paintingID, index) =>{
+export const useForm = (index, initialGenrs, initialpaintingValue, command, paintingID) =>{
   const navigate = useNavigate()
   const {setErrorMessages, setAllPaintings, setIsChanged, errorMessages} = useContext(PaintingsContext)
   const [paintingValue, setpaintingValue] = useState(initialpaintingValue);
   const [genres, setGenres] = useState(initialGenrs);
+
 
 
 
@@ -51,7 +52,7 @@ export const useForm = (initialGenrs, initialpaintingValue, command, paintingID,
           response = await data.createPainting(body);
 
       } else if (command === "edit")  {
-          response = await data.editRecord(paintingID, body)
+          response = await data.editPainting(paintingID, body)
 
       }      
   
@@ -67,7 +68,7 @@ export const useForm = (initialGenrs, initialpaintingValue, command, paintingID,
         if(command === "create"){
           navigate("/");
       } else if (command === "edit")  {
-          //navigate(`/paintings/${paintingID}/${index}`)
+          navigate(`/paintings/${paintingID}/${index}`)
       }    
       }
     };
@@ -79,7 +80,7 @@ export const useForm = (initialGenrs, initialpaintingValue, command, paintingID,
       setpaintingValue,
       setGenres,
       errorMessages,
-      onSubmitHandler
+      onSubmitHandler,
     }
 
 

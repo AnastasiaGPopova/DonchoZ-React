@@ -108,7 +108,7 @@ function DetailsPage() {
 
 
   return (
-    <main>
+    <main className="detailsMain">
         <div className={styles.headerNEW}>
             <nav className={styles.navbar}>
                 <h2><Link to="/">Doncho Zahariev</Link></h2>

@@ -20,7 +20,7 @@
     text-decoration: none;
   }
 
-  main {
+  .detailsMain {
     display: flex;
     justify-content: center;
     align-items: center; 

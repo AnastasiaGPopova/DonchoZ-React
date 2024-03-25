@@ -1,0 +1,21 @@
+.aboutpageMain {
+    margin-top: 2rem;
+    margin-left: 27rem; 
+  }
+  
+  .aboutpageMain div {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+  }
+  
+
+.aboutpageMain div img{
+    width: 1320px; /* Adjust the width as needed */
+    height: auto; /* Automatically adjust height to maintain aspect ratio */
+}
+
+.articleAbout{
+    
+}

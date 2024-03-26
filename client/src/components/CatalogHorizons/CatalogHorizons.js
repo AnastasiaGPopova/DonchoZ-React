@@ -14,12 +14,23 @@ function CatalogHorizons() {
     console.log(paintingsHorizonts)
 
   return (
-    <main className={styles.catalogMain}>
-      <div className={styles.catalogContainer}>
-      {paintingsHorizonts.map((x, index) =>{
-        const paintingWithIndex = { ...x, index }
-        return  <SinglePainting key={x._id} {...paintingWithIndex} />
-      })}
+    <main className={styles.CatalogMain} >
+      <div className={styles.catalogContainer1}>
+        <h2>Other work</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        qqrqerqerq</p>
+
+         <div className={styles.galery}>
+            {paintingsOthers.map((x, index) => {
+              const paintingWithIndex = { ...x, index };
+              return (
+                <div key={x._id} className={styles.singlePainting}>
+                  <SinglePainting {...paintingWithIndex} />
+                </div>
+              );
+            })}
+          </div>
+
       </div>
     </main>
 

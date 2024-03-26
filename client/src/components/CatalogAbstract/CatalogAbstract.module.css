@@ -1,12 +1,41 @@
 .CatalogMain {
     margin-top: 2rem;
-    margin-left: 23rem; 
+    margin-left: 25rem; 
+    margin-right: 3rem;
   }
   
-  .catalogContainer {
+  .catalogContainer1 {
+    display: flex;
+    margin: 4.7rem auto;
+    flex-direction: column;
+    justify-content: left; /* Horizontally center */
+    align-items: start; /* Vertically center */
+  }
+
+  .catalogContainer1 p{
+    font-size: 1.5rem;
+  }
+  
+  .galery {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Horizontally center */
+    justify-content: space-between; /* Distribute items evenly */
     align-items: center; /* Vertically center */
   }
   
+  .singlePainting {
+    flex-basis: calc(33.33% - 10px); /* Set width for each painting with a margin */
+    margin-bottom: 20px; /* Add margin between paintings */
+  }
+  
+  @media screen and (max-width: 1024px) {
+    .singlePainting {
+      flex-basis: calc(50% - 10px); /* Set width for each painting with a margin for smaller screens */
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .singlePainting {
+      flex-basis: calc(100% - 10px); /* Set width for each painting with a margin for even smaller screens */
+    }
+  }

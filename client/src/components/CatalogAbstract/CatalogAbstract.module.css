@@ -15,6 +15,12 @@
   .catalogContainer1 p{
     font-size: 1.5rem;
   }
+
+  
+  .catalogContainer1 h2{
+   padding-bottom: 1rem;
+  }
+  
   
   .galery {
     display: flex;

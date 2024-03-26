@@ -1,0 +1,17 @@
+.pressPageMain {
+    margin-top: 2rem;
+    margin-left: 27rem; 
+  }
+  
+  .pressPageMain div {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+  }
+  
+
+.pressPageMain div img{
+    width: 1320px; /* Adjust the width as needed */
+    height: auto; /* Automatically adjust height to maintain aspect ratio */
+}

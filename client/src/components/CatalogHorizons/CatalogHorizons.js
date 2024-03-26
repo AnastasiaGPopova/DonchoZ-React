@@ -21,7 +21,7 @@ function CatalogHorizons() {
         qqrqerqerq</p>
 
          <div className={styles.galery}>
-            {paintingsOthers.map((x, index) => {
+            {paintingsHorizonts.map((x, index) => {
               const paintingWithIndex = { ...x, index };
               return (
                 <div key={x._id} className={styles.singlePainting}>

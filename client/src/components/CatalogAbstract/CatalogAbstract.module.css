@@ -21,20 +21,20 @@
 }
 
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px; /* Gap between images */
+  width: 100%;
+  column-count: 3;
+  column-gap: 25px;
+  gap:25px
 }
 
 .singlePainting {
-  width: calc(33.33% - 20px); /* Adjust width for 3 items per row with gap */
+  width:100%; /* Adjust width for 3 items per row with gap */
   height: auto;
 }
 
 .singlePainting img {
+  display: inline-block;
   width: 100%; /* Ensure the image fills the container */
-  height: auto; /* Allow the height to adjust based on image aspect ratio */
-  object-fit: cover; /* Maintain aspect ratio and fill container */
 }
 
 @media (max-width: 1024px) {

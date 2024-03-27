@@ -55,12 +55,14 @@
 .detailsInfo p {
   padding: 0;
   margin: 0;
+  font-size: 1.6rem;
 }
 
 .detailsContainer{
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  padding-bottom: 3rem;
   height: 100vh;
 }
 

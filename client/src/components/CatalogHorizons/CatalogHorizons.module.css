@@ -11,9 +11,8 @@
   justify-content: left; /* Horizontally center */
   align-items: start; /* Vertically center */
 }
-
 .catalogContainer1 p{
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
 
 .catalogContainer1 h2{

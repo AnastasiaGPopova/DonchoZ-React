@@ -1,22 +1,30 @@
 .aboutpageMain {
     margin-top: 2rem;
-    margin-left: 27rem; 
+    margin-left: 25rem; 
   }
   
   .aboutpageMain div {
-    margin: 0 auto;
+    margin: 4.5rem auto;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Horizontally center */
-    align-items: center; /* Vertically center */
+    justify-content: left; /* Horizontally center */
+    align-items: flex-start; /* Vertically center */
   }
   
+  .aboutpageMain p{
+    font-size: 1.6rem;
+  }
 
 .aboutpageMain div img{
-    width: 1320px; /* Adjust the width as needed */
+    width: 1000px; /* Adjust the width as needed */
     height: auto; /* Automatically adjust height to maintain aspect ratio */
 }
 
-.articleAbout{
+.articleAbout p{
+  font-size: 1.6rem;
+  
+}
 
+.articleAbout ul li {
+  font-size: 1.6rem;
 }

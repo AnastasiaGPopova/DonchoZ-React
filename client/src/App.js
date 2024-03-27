@@ -17,6 +17,7 @@ import CreatePage from './components/CreatePage/CreatePage';
 import EditPage from './components/EditPage/EditPage';
 import AboutPage from './components/AboutPage/AboutPage';
 import PressPage from './components/PressPage/PressPage';
+import GalleriesPage from './components/GalleriesPage/GalleriesPage';
 
 function App() {
   
@@ -89,6 +90,7 @@ function App() {
         <Route path="/paintings/:paintingsId/edit/:index" element={<EditPage/>}/>
         <Route path="/about" element={<AboutPage/>}/>
         <Route path="/press" element={<PressPage/>}/>
+        <Route path="/online-galleries" element={<GalleriesPage/>}/>
 
       </Routes>
       <Navigation/>

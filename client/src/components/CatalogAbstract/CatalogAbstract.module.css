@@ -1,47 +1,63 @@
 .CatalogMain {
-    margin-top: 2rem;
-    margin-left: 25rem; 
-    margin-right: 5rem;
-  }
-  
-  .catalogContainer1 {
-    display: flex;
-    margin: 4.7rem auto;
-    flex-direction: column;
-    justify-content: left; /* Horizontally center */
-    align-items: start; /* Vertically center */
-  }
+  margin-top: 2rem;
+  margin-left: 25rem; 
+  margin-right: 5rem;
+}
 
-  .catalogContainer1 p{
-    font-size: 1.6rem;
-  }
+.catalogContainer1 {
+  display: flex;
+  margin: 4.7rem auto;
+  flex-direction: column;
+  justify-content: left; /* Horizontally center */
+  align-items: start; /* Vertically center */
+}
 
-  
-  .catalogContainer1 h2{
-   padding-bottom: 1rem;
+.catalogContainer1 p {
+  font-size: 1.6rem;
+}
+
+.catalogContainer1 h2 {
+  padding-bottom: 1rem;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Gap between images */
+}
+
+.singlePainting {
+  width: calc(33.33% - 20px); /* Adjust width for 3 items per row with gap */
+  height: auto;
+}
+
+.singlePainting img {
+  width: 100%; /* Ensure the image fills the container */
+  height: auto; /* Allow the height to adjust based on image aspect ratio */
+  object-fit: cover; /* Maintain aspect ratio and fill container */
+}
+
+@media (max-width: 1024px) {
+  .gallery {
+    justify-content: center; /* Center items on smaller screens */
   }
-  
-  
-  .galery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* Distribute items evenly */
-    align-items: center; /* Vertically center */
-  }
-  
+}
+
+@media (max-width: 768px) {
   .singlePainting {
-    flex-basis: calc(33.33% - 10px); /* Set width for each painting with a margin */
-    margin-bottom: 20px; /* Add margin between paintings */
+    width: calc(50% - 20px); /* Adjust width for 2 items per row with gap on smaller screens */
   }
-  
-  @media screen and (max-width: 1024px) {
-    .singlePainting {
-      flex-basis: calc(50% - 10px); /* Set width for each painting with a margin for smaller screens */
-    }
+}
+
+
+@media screen and (max-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
   }
-  
-  @media screen and (max-width: 768px) {
-    .singlePainting {
-      flex-basis: calc(100% - 10px); /* Set width for each painting with a margin for even smaller screens */
-    }
+}
+
+@media screen and (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(1, 1fr); /* 1 column for even smaller screens */
   }
+}

@@ -12,33 +12,52 @@
   align-items: start; /* Vertically center */
 }
 
-.catalogContainer1 p{
+.catalogContainer1 p {
   font-size: 1.6rem;
 }
-.catalogContainer1 h2{
-  padding-bottom: 1rem;
- }
 
-.galery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; /* Distribute items evenly */
-  align-items: center; /* Vertically center */
+.catalogContainer1 h2 {
+  padding-bottom: 1rem;
+}
+
+.gallery {
+  width: 100%;
+  column-count: 3;
+  column-gap: 25px;
+  gap:25px
 }
 
 .singlePainting {
-  flex-basis: calc(33.33% - 10px); /* Set width for each painting with a margin */
-  margin-bottom: 20px; /* Add margin between paintings */
+  width:100%; /* Adjust width for 3 items per row with gap */
+  height: auto;
 }
 
-@media screen and (max-width: 1024px) {
+.singlePainting img {
+  display: inline-block;
+  width: 100%; /* Ensure the image fills the container */
+}
+
+@media (max-width: 1024px) {
+  .gallery {
+    justify-content: center; /* Center items on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
   .singlePainting {
-    flex-basis: calc(50% - 10px); /* Set width for each painting with a margin for smaller screens */
+    width: calc(50% - 20px); /* Adjust width for 2 items per row with gap on smaller screens */
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
   }
 }
 
 @media screen and (max-width: 768px) {
-  .singlePainting {
-    flex-basis: calc(100% - 10px); /* Set width for each painting with a margin for even smaller screens */
+  .gallery {
+    grid-template-columns: repeat(1, 1fr); /* 1 column for even smaller screens */
   }
 }

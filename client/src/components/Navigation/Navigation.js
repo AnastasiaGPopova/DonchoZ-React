@@ -34,7 +34,7 @@ function Navigation(){
             <li> <Link to="/horizons">horizons series</Link></li>
             <li> <Link to="/other">other works</Link></li>
             <li> <Link to="/press">press</Link></li>
-            <li> <Link to="/links">links</Link></li>
+            <li> <Link to="/links">online galleries</Link></li>
             <li> <Link to="/about">about</Link></li>
             <li> <Link to="/contacts">contatcs</Link></li>
             <br></br>

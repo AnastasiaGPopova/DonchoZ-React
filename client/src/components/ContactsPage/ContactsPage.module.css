@@ -1,0 +1,22 @@
+.contactsMainPage {
+    margin-top: 2rem;
+    margin-left: 25rem; 
+  }
+  
+  .contactsMainPage div {
+    margin: 4.5rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: left; /* Horizontally center */
+    align-items: flex-start; /* Vertically center */
+    gap: 20px
+  }
+  
+
+.contactsMainPage div a{
+    font-size: 1.6rem;
+}
+
+.contactsMainPage div h3{
+  font-size: 2.2em;
+}

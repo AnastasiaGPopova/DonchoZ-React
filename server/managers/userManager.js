@@ -38,7 +38,7 @@ exports.login = async (email, password) => {
 }
 };
 
-exports.register = async (email, password, rePassword, gender) => {
+exports.register = async (email, password) => {
     const existingUser = await User.findOne({ email });
 
     try{
@@ -47,15 +47,11 @@ exports.register = async (email, password, rePassword, gender) => {
         throw new Error('Email is already taken !');
     }
 
-    if(!email || !password || !rePassword){
+    if(!email || !password){
         throw new Error('All fields are requiered!');
     }
 
-    if(password !== rePassword){
-        throw new Error('Password missmatch!');
-    }
-
-    const newUser = await User.create({email, password, gender})
+    const newUser = await User.create({email, password})
 
 
     return this.login(email, password)

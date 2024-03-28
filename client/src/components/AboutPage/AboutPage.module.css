@@ -1,0 +1,30 @@
+.aboutpageMain {
+    margin-top: 2rem;
+    margin-left: 25rem; 
+  }
+  
+  .aboutpageMain div {
+    margin: 5rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: left; /* Horizontally center */
+    align-items: flex-start; /* Vertically center */
+  }
+  
+  .aboutpageMain p{
+    font-size: 1.6rem;
+  }
+
+.aboutpageMain div img{
+    width: 650px; /* Adjust the width as needed */
+    height: auto; /* Automatically adjust height to maintain aspect ratio */
+}
+
+.articleAbout p{
+  font-size: 1.6rem;
+  
+}
+
+.articleAbout ul li {
+  font-size: 1.6rem;
+}

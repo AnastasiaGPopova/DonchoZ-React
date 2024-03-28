@@ -21,7 +21,7 @@ mongoose.set('strictQuery', false);
 const connect = async () => {
   try {
     mongoose.connect(
-      "mongodb+srv://newAniUser:AniTest@cluster0.vn3iex9.mongodb.net/recordme?retryWrites=true&w=majority",{}
+      "mongodb+srv://AniUSER:AniTest@clustertest.mljgaqh.mongodb.net/DonchoBASE",{}
     );
     console.log(`Connected to MongoDB`)
   } catch (error) {

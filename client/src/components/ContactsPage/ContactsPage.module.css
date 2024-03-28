@@ -3,13 +3,17 @@
     margin-left: 25rem; 
   }
   
-  .contactsMainPage div {
+  .info {
     margin: 4.5rem auto;
     display: flex;
     flex-direction: column;
     justify-content: left; /* Horizontally center */
     align-items: flex-start; /* Vertically center */
     gap: 20px
+  }
+
+  .info a{
+    font-size: 1.6rem;
   }
   
 
@@ -19,4 +23,60 @@
 
 .contactsMainPage div h3{
   font-size: 2.2em;
+}
+
+.icon {
+    color: black;
+    padding-right: 1rem;
+  }
+  
+
+  .container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+h2 {
+    margin-bottom: 1rem;
+}
+
+.formGroup{
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.6rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
 }

@@ -9,9 +9,9 @@ import * as data from '../../api/data';
 
 function ContactsPage() {
         const [formData, setFormData] = useState({
-            name: '',
-            email: '',
-            message: ''
+            subject: '',
+            to: '',
+            text: ''
         });
     
         const handleChange = (e) => {
@@ -22,10 +22,11 @@ function ContactsPage() {
             });
         };
     
-        const handleSubmit = (e) => {
+        const handleSubmit = async (e) => {
             e.preventDefault();
             // Add your form submission logic here
             console.log(formData);
+            const response = await data.sendEmail(formData)
         };
   return (
     <main className={styles.contactsMainPage}>
@@ -45,16 +46,16 @@ function ContactsPage() {
             <h2>Contact Us</h2>
             <form onSubmit={handleSubmit}>
                 <div className={styles.formGroup}>
-                    <label htmlFor="name">Your Name:</label>
-                    <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
+                    <label htmlFor="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" value={formData.subject} onChange={handleChange} required />
                 </div>
                 <div className={styles.formGroup}>
-                    <label htmlFor="email">Your Email:</label>
-                    <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
+                    <label htmlFor="to">Your Email:</label>
+                    <input type="email" id="to" name="to" value={formData.to} onChange={handleChange} required />
                 </div>
                 <div className={styles.formGroup}>
-                    <label htmlFor="message">Message:</label>
-                    <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows="5" required></textarea>
+                    <label htmlFor="text">Message:</label>
+                    <textarea id="text" name="text" value={formData.text} onChange={handleChange} rows="5" required></textarea>
                 </div>
                 <button type="submit">Send Message</button>
             </form>

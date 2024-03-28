@@ -24,10 +24,17 @@ function ContactsPage() {
     
         const handleSubmit = async (e) => {
             e.preventDefault();
-            // Add your form submission logic here
-            console.log(formData);
-            const response = await data.sendEmail(formData)
+                const response = await data.sendEmail(formData);
+                // Reset form data on successful submission
+                setFormData({
+                    subject: '',
+                    to: '',
+                    text: ''
+                });
+                e.target.reset();
         };
+
+        
   return (
     <main className={styles.contactsMainPage}>
       <div className={styles.info}>

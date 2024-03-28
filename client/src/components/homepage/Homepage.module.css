@@ -4,7 +4,7 @@
   }
   
   .homePageMain div {
-    margin: 0 auto;
+    margin: 4.5rem auto;
     display: flex;
     justify-content: center; /* Horizontally center */
     align-items: center; /* Vertically center */

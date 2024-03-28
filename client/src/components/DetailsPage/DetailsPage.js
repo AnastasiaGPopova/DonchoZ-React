@@ -163,7 +163,7 @@ function DetailsPage() {
     <main className={styles.detailsMain}>
         <div className={styles.headerNEW}>
             <nav className={styles.navbar}>
-                <h2><Link to="/">Doncho Zahariev</Link></h2>
+                {/* <h2><Link to="/">Doncho Zahariev</Link></h2> */}
 
                <div className={styles.detailsInfo}>
                   <p>{currentPainting.paintingName}</p>

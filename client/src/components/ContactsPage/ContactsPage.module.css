@@ -67,7 +67,7 @@ textarea {
 }
 
 button[type="submit"] {
-    background-color: #007bff;
+    background-color: lightgray;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -78,5 +78,5 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: darkgray;
 }

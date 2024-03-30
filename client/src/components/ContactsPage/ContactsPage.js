@@ -16,6 +16,7 @@ function ContactsPage() {
     
         const handleChange = (e) => {
             const { name, value } = e.target;
+            
             setFormData({
                 ...formData,
                 [name]: value
@@ -26,15 +27,20 @@ function ContactsPage() {
             e.preventDefault();
                 const response = await data.sendEmail(formData);
                 // Reset form data on successful submission
-                setFormData({
-                    subject: '',
-                    to: '',
-                    text: ''
-                });
-                e.target.reset();
+
+                await new Promise(resolve => setTimeout(resolve, 1000));
+
+                if(!response.errors){
+                    console.log(`yeeeyey`)
+                    setFormData({
+                        subject: '',
+                        to: '',
+                        text: ''
+                    });
+                }
         };
 
-        
+
   return (
     <main className={styles.contactsMainPage}>
       <div className={styles.info}>
@@ -48,6 +54,8 @@ function ContactsPage() {
         https://www.facebook.com/profile.php?id=100085924557248
         </a>
       </div>
+
+
 
       <div className="container">
             <h2>Contact Us</h2>

@@ -1,15 +1,14 @@
 import styles from "./Navigation.module.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom"; // Import NavLink for active class
 import { useEffect, useState } from "react";
 import * as data from '../../api/data';
-import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { PaintingsContext } from "../../contexts/PaintingsContext";
 
 
 function Navigation(){
     const [activeMenuItem, setActiveMenuItem] = useState(null);
-    const {isLogged, setIsLogged} = useContext(PaintingsContext)
+    const { isLogged, setIsLogged } = useContext(PaintingsContext)
 
     const navigate = useNavigate()
 
@@ -21,35 +20,34 @@ function Navigation(){
 
     const handleMenuItemClick = (menuItem) => {
         setActiveMenuItem(menuItem);
-      };
+    };
 
-      console.log(activeMenuItem)
-    return(
-    <div className={styles.headerNEW}>
-        <nav className={styles.navbar}>
-        <h2><Link to="/">Doncho Zahariev</Link></h2>
-            <img src="/images/Logo.png" alt="" className={styles.logo}/>
-            <ul>
-            <li> <Link to="/abstract" className={activeMenuItem === 'abstract' ? 'bold-a' : ''} onClick={() => handleMenuItemClick('abstract')}>abstract series</Link></li>
-            <li> <Link to="/horizons">horizons series</Link></li>
-            <li> <Link to="/other">other works</Link></li>
-            <li> <Link to="/press">press</Link></li>
-            <li> <Link to="/online-galleries">online galleries</Link></li>
-            <li> <Link to="/about">about</Link></li>
-            <li> <Link to="/contacts">contatcs</Link></li>
-            <br></br>
-            <br></br>
+    return (
+        <div className={styles.headerNEW}>
+            <nav className={styles.navbar}>
+                <h2><NavLink to="/" activeclassname={styles.active}>Doncho Zahariev</NavLink></h2>
+                <img src="/images/Logo.png" alt="" className={styles.logo}/>
+                <ul>
+                <li onClick={() => handleMenuItemClick('abstract')}> <NavLink to="/abstract" activeClassName={styles.active} className={activeMenuItem === 'abstract' ? styles.bold : ''}>abstract series</NavLink></li>
+                    <li onClick={() => handleMenuItemClick('horizons')}> <NavLink to="/horizons" activeClassName={styles.active} className={activeMenuItem === 'horizons' ? styles.bold : ''}>horizons series</NavLink></li>
+                    <li onClick={() => handleMenuItemClick('other')}> <NavLink to="/other" activeClassName={styles.active} className={activeMenuItem === 'other' ? styles.bold : ''}>other works</NavLink></li>
+                    <li onClick={() => handleMenuItemClick('press')}> <NavLink to="/press" activeClassName={styles.active} className={activeMenuItem === 'press' ? styles.bold : ''}>press</NavLink></li>
+                    <li onClick={() => handleMenuItemClick('online-galleries')}> <NavLink to="/online-galleries" activeClassName={styles.active} className={activeMenuItem === 'online-galleries' ? styles.bold : ''}>online galleries</NavLink></li>
+                    <li onClick={() => handleMenuItemClick('about')}> <NavLink to="/about" activeClassName={styles.active} className={activeMenuItem === 'about' ? styles.bold : ''}>about</NavLink></li>
+                    <li onClick={() => handleMenuItemClick('contacts')}> <NavLink to="/contacts" activeClassName={styles.active} className={activeMenuItem === 'contacts' ? styles.bold : ''}>contacts</NavLink></li>
+                    <br></br>
+                    <br></br>
 
-                { isLogged ?
-                 (<>
-                 <li> <Link to="/create">Add painting</Link></li>
-                 <li> <Link to="" onClick={onLogOutClick}>LOGOUT</Link></li>
-                 </>) : ''
-                } 
+                    { isLogged ?
+                        (<>
+                            <li> <NavLink to="/create" activeclassname={styles.active}>Add painting</NavLink></li>
+                            <li> <NavLink to="" onClick={onLogOutClick}>LOGOUT</NavLink></li>
+                        </>) : ''
+                    } 
 
-            </ul>
-        </nav>
-    </div>
+                </ul>
+            </nav>
+        </div>
     )
 }
 

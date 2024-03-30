@@ -161,8 +161,8 @@ function DetailsPage() {
 
   return (
     <main className={styles.detailsMain}>
-        <div className={styles.headerNEW}>
-            <nav className={styles.navbar}>
+        <div className={styles.headerNEWDetaild}>
+            <nav className={styles.navbarDetails}>
                 {/* <h2><Link to="/">Doncho Zahariev</Link></h2> */}
 
                <div className={styles.detailsInfo}>

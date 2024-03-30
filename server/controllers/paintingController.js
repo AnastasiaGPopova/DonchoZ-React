@@ -45,8 +45,17 @@ router.post("/", async (req, res) => {
       throw new Error (`This painting name already exist in our catalog!`)
     }
 
+  //  https://drive.google.com/file/d/1vceRCY6SsbSGAcF_euIjeL4bb73itgxB/view?usp=sharing
+  //  https://drive.google.com/thumbnail?id=1xFCdzfUJ4ASxPLuka2_ardatW4JKfdmb&sz=w1000
 
-    const painting = await paintingManager.create({paintingName, year, imageUrl, description, genre});
+
+const splittedURL = imageUrl.split("/")
+console.log(splittedURL)
+
+const realUrl = `https://drive.google.com/thumbnail?id=${splittedURL[5]}&sz=w1000`
+
+
+    const painting = await paintingManager.create({paintingName, year, imageUrl: realUrl, description, genre});
 
     res.json({ _id: painting._id });
   } catch (error) {

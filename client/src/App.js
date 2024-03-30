@@ -18,6 +18,7 @@ import EditPage from './components/EditPage/EditPage';
 import AboutPage from './components/AboutPage/AboutPage';
 import PressPage from './components/PressPage/PressPage';
 import GalleriesPage from './components/GalleriesPage/GalleriesPage';
+import ContactsPage from './components/ContactsPage/ContactsPage';
 
 function App() {
   
@@ -52,7 +53,9 @@ function App() {
         const otherPics = allPaints.filter(x => x.genre.includes("other"))
         setPaintingsOthers(otherPics)
         const horizonPics = allPaints.filter(x => x.genre.includes("horizon"))
+        console.log(`horizonPics`)
         setPaintingsHorizonts(horizonPics)
+        console.log(horizonPics)
       } catch (error) {
         console.log(error);
       }
@@ -91,6 +94,7 @@ function App() {
         <Route path="/about" element={<AboutPage/>}/>
         <Route path="/press" element={<PressPage/>}/>
         <Route path="/online-galleries" element={<GalleriesPage/>}/>
+        <Route path="/contacts" element={<ContactsPage/>}/>
 
       </Routes>
       <Navigation/>

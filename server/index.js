@@ -1,5 +1,8 @@
 const express = require('express');
 const cors = require('cors');
+const corsOptions = {
+  origin: '*', // Allow requests from all origins
+};
 const mongoose = require('mongoose');
 
 const routes = require('./routes');
@@ -9,7 +12,7 @@ const { authentication } = require('./middlewares/authMiddleware');
 
 const app = express();
 
-app.use(cors());
+app.use(cors(corsOptions)); // Apply CORS middleware
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(authentication());

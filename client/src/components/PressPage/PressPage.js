@@ -20,9 +20,9 @@ function PressPage() {
       <Link to={`https://www.youtube.com/watch?v=y6UERL01RRk`}>SOLO EXHIBITION in Pernik 2010 - Video</Link>
       <Link to={`https://www.youtube.com/watch?v=gkrABIIaXfo`}>SOLO EXHIBITION in Pernik 2013 - Video</Link>
       <br></br>
-      <h3>Online galleries:</h3>
+      {/* <h3>Online galleries:</h3>
       <Link to={`https://www.saatchiart.com/donchozahariev`}>Saatchi Art</Link>
-      <Link to={`https://www.singulart.com/en/artist/doncho-zahariev-30735`}>Singulart</Link>
+      <Link to={`https://www.singulart.com/en/artist/doncho-zahariev-30735`}>Singulart</Link> */}
 
       </div>
 

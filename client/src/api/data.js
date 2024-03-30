@@ -35,6 +35,10 @@ export async function editPainting(id, data) {
     }
 }
 
+export async function sendEmail(data) {
+    return await api.post(host + '/email',data);
+}
+
 
 
 // export async function searchFunction(data) {

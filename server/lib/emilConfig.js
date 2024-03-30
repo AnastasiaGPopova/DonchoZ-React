@@ -20,9 +20,9 @@ async function sendEmail(to, subject, text) {
         // Create email options
         const mailOptions = {
             from: process.env.GMAIL_EMAIL, // Use environment variable
-            to: to,
+            to: 'zahari.donchev@gmail.com',
             subject: subject,
-            text: text
+            text: `This message was sent from ${to} \n   ${text}`
         };
 
         // Send email

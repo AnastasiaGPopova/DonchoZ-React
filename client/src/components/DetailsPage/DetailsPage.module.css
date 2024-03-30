@@ -52,6 +52,7 @@
   justify-content: flex-end;
   flex-direction: column;
   z-index: 2;
+  word-break: break-all;
 }
 
 .detailsInfo p {

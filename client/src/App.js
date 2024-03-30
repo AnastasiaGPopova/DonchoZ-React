@@ -53,7 +53,9 @@ function App() {
         const otherPics = allPaints.filter(x => x.genre.includes("other"))
         setPaintingsOthers(otherPics)
         const horizonPics = allPaints.filter(x => x.genre.includes("horizon"))
+        console.log(`horizonPics`)
         setPaintingsHorizonts(horizonPics)
+        console.log(horizonPics)
       } catch (error) {
         console.log(error);
       }

@@ -28,13 +28,13 @@ function Navigation(){
                 <h2><NavLink to="/" activeclassname={styles.active}>Doncho Zahariev</NavLink></h2>
                 <img src="/images/Logo.png" alt="" className={styles.logo}/>
                 <ul>
-                <li onClick={() => handleMenuItemClick('abstract')}> <NavLink to="/abstract" activeClassName={styles.active} className={activeMenuItem === 'abstract' ? styles.bold : ''}>abstract series</NavLink></li>
-                    <li onClick={() => handleMenuItemClick('horizons')}> <NavLink to="/horizons" activeClassName={styles.active} className={activeMenuItem === 'horizons' ? styles.bold : ''}>horizons series</NavLink></li>
-                    <li onClick={() => handleMenuItemClick('other')}> <NavLink to="/other" activeClassName={styles.active} className={activeMenuItem === 'other' ? styles.bold : ''}>other works</NavLink></li>
-                    <li onClick={() => handleMenuItemClick('press')}> <NavLink to="/press" activeClassName={styles.active} className={activeMenuItem === 'press' ? styles.bold : ''}>press</NavLink></li>
-                    <li onClick={() => handleMenuItemClick('online-galleries')}> <NavLink to="/online-galleries" activeClassName={styles.active} className={activeMenuItem === 'online-galleries' ? styles.bold : ''}>online galleries</NavLink></li>
-                    <li onClick={() => handleMenuItemClick('about')}> <NavLink to="/about" activeClassName={styles.active} className={activeMenuItem === 'about' ? styles.bold : ''}>about</NavLink></li>
-                    <li onClick={() => handleMenuItemClick('contacts')}> <NavLink to="/contacts" activeClassName={styles.active} className={activeMenuItem === 'contacts' ? styles.bold : ''}>contacts</NavLink></li>
+                <li onClick={() => handleMenuItemClick('abstract')}> <NavLink to="/abstract" activeclassname={styles.active} className={activeMenuItem === 'abstract' ? styles.bold : ''}>abstract series</NavLink></li>
+                    <li onClick={() => handleMenuItemClick('horizons')}> <NavLink to="/horizons" activeclassname={styles.active} className={activeMenuItem === 'horizons' ? styles.bold : ''}>horizons series</NavLink></li>
+                    <li onClick={() => handleMenuItemClick('other')}> <NavLink to="/other" activeclassname={styles.active} className={activeMenuItem === 'other' ? styles.bold : ''}>other works</NavLink></li>
+                    <li onClick={() => handleMenuItemClick('press')}> <NavLink to="/press" activeclassname={styles.active} className={activeMenuItem === 'press' ? styles.bold : ''}>press</NavLink></li>
+                    <li onClick={() => handleMenuItemClick('online-galleries')}> <NavLink to="/online-galleries" activeclassname={styles.active} className={activeMenuItem === 'online-galleries' ? styles.bold : ''}>online galleries</NavLink></li>
+                    <li onClick={() => handleMenuItemClick('about')}> <NavLink to="/about" activeclassname={styles.active} className={activeMenuItem === 'about' ? styles.bold : ''}>about</NavLink></li>
+                    <li onClick={() => handleMenuItemClick('contacts')}> <NavLink to="/contacts" activeclassname={styles.active} className={activeMenuItem === 'contacts' ? styles.bold : ''}>contacts</NavLink></li>
                     <br></br>
                     <br></br>
 

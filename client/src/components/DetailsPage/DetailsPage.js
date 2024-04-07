@@ -50,9 +50,6 @@ function DetailsPage() {
                     setHistoryPath('horizons')
                 }
 
-                console.log(`CURRENT ARRAY`)
-                console.log(currentArray)
-
           setLoading(false)
         }
     

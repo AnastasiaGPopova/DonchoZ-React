@@ -7,7 +7,6 @@ import { PaintingsContext } from './contexts/PaintingsContext';
 
 
 import Navigation from './components/Navigation/Navigation';
-import Homepage from './components/Homepage/Homepage.js'
 import CatalogAbstract from './components/CatalogAbstract/CatalogAbstract';
 import CatalogOthers from './components/CatalogOthers/CatalogOthers';
 import DetailsPage from './components/DetailsPage/DetailsPage';
@@ -19,6 +18,7 @@ import AboutPage from './components/AboutPage/AboutPage';
 import PressPage from './components/PressPage/PressPage';
 import GalleriesPage from './components/GalleriesPage/GalleriesPage';
 import ContactsPage from './components/ContactsPage/ContactsPage';
+import Homepage from './components/homepage/Homepage';
 
 function App() {
   
@@ -83,7 +83,7 @@ function App() {
     <>
     <PaintingsContext.Provider value={contextValue}>
       <Routes>
-        <Route path="/" element={<Homepage></Homepage>} />
+        <Route path="/" element={<Homepage/>} />
         <Route path="/abstract" element={<CatalogAbstract></CatalogAbstract>} />
         <Route path="/other" element={<CatalogOthers/>} />
         <Route path="/horizons" element={<CatalogHorizons/>} />

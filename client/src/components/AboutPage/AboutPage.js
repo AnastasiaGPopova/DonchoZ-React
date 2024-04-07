@@ -12,7 +12,7 @@ function AboutPage() {
       <div>
       {/* https://drive.google.com/file/d/1clJJEKfkuiNybSZkoOTWteoRf4Gjb8-w/view?usp=drive_link */}
           <img src="https://drive.google.com/thumbnail?id=1clJJEKfkuiNybSZkoOTWteoRf4Gjb8-w&sz=w1000" alt="test"/>
-          <p>Born on 18.07.1944 in the village of Gabrov Dol, near Pernik, Bulgaria.</p>
+          <p>Born on 18.07.1944, Pernik, Bulgaria.</p>
       </div>
 
       <article className={styles.articleAbout}>

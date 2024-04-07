@@ -12,9 +12,9 @@
 
 .navbarDetails {
     position: fixed;
-    top: 70rem;
-    left: 0;
-    width: 250px; /* Adjust the width as needed */
+    top: 50rem;
+    left: 2rem;
+    width: 220px; /* Adjust the width as needed */
     background-color: white; /* Example background color */
     color: black; /* Example text color */
     padding: 20px;

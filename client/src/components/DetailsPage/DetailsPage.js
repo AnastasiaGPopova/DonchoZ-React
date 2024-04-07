@@ -45,10 +45,13 @@ function DetailsPage() {
                 } else if (response.genre === "other"){
                     setcurrentArray(paintingsOthers)
                     setHistoryPath('other')
-                } else if (response.genre === "horizons"){
+                } else if (response.genre === "horizon"){
                     setcurrentArray(paintingsHorizonts)
                     setHistoryPath('horizons')
                 }
+
+                console.log(`CURRENT ARRAY`)
+                console.log(currentArray)
 
           setLoading(false)
         }

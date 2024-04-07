@@ -19,7 +19,7 @@ function CatalogAbstract() {
 <main className={styles.CatalogMain} >
   <div className={styles.catalogContainer1}>
     <h2>Abstract series</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. qqrqerqerq</p>
+    <p>Vivid colors, bold contrasts, and emotive compositions define this collection. Guided by intuition, each piece explores psychological dynamics through stark contrasts, but also subtle harmonies. Engage with raw authenticity and embark on a journey of self-discovery through the vivid energy of abstract expressionism.</p>
 
     <div className={styles.gallery}>
       {paintingsAbstract.map((x, index) => {

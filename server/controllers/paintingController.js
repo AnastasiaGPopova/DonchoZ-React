@@ -41,9 +41,9 @@ router.post("/", async (req, res) => {
       throw new Error (`All fields are requiered!`)
     }
 
-    if(existingRecord){
-      throw new Error (`This painting name already exist in our catalog!`)
-    }
+    // if(existingRecord){
+    //   throw new Error (`This painting name already exist in our catalog!`)
+    // }
 
   //  https://drive.google.com/file/d/1vceRCY6SsbSGAcF_euIjeL4bb73itgxB/view?usp=sharing
   //  https://drive.google.com/thumbnail?id=1xFCdzfUJ4ASxPLuka2_ardatW4JKfdmb&sz=w1000

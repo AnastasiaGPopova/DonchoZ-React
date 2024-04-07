@@ -18,6 +18,10 @@ function AboutPage() {
       <article className={styles.articleAbout}>
         <p>Member of the Union of Bulgarian Artists. He has been participating in group exhibition since 1967. He realized over 20 single exhibitions in the period 1971 until today.</p>
 
+        <p>He took part in over 15 international pleinairs.</p>
+        <p>His paintings are possession of The National Art gallery, other galleries in Bulgaria and private collections in Austria, Belgium, Greece, USA, Germany, Serbia and Montenegro, Cyprus, Switzerland, Poland, France, South Korea.</p>
+
+
         <p>I am an artist based in Bulgaria and over the years of my creative experience I have followed a long path – a winding exploration of abstract art and its borders. Sometimes I imagine that all my artworks are landscapes, though emotional landscapes, which I visualize as a long, almost geological evolution of emotional processes. Sometimes the picture would present a peaceful sea embracing the endless depth of the clear sky of a calm mind, sometimes it would present an eruption of the forces born deep into the depths of the human soul. But more often than not, these worlds unveil slowly, as the contact with them becomes more and more intimate. While painting these emotional landscapes, I neither try to expose „the true nature“ of emotions, nor to present them beautifully - my struggle is to present them just as they happened to be in a particular moment.</p>
 
         <h3>SOLO EXHIBITIONS</h3>
@@ -110,11 +114,6 @@ function AboutPage() {
             <li>2002 – First National Biennale for Small Events – Pleven</li>
         </ul>
         
-        <p>He took part in over 15 international pleinairs.</p>
-        <p>His paintings are possession of The National Art gallery, other galleries in Bulgaria and private collections in Austria, Belgium, Greece, USA, Germany, Serbia and Montenegro, Cyprus, Switzerland, Poland, France, South Korea.</p>
-
-
-
 
 
 

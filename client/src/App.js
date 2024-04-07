@@ -18,7 +18,7 @@ import AboutPage from './components/AboutPage/AboutPage';
 import PressPage from './components/PressPage/PressPage';
 import GalleriesPage from './components/GalleriesPage/GalleriesPage';
 import ContactsPage from './components/ContactsPage/ContactsPage';
-import Homepage from './components/homepage/Homepage';
+import Homepage from './components/Homepage/Homepage';
 
 function App() {
   

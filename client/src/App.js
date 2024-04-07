@@ -7,7 +7,7 @@ import { PaintingsContext } from './contexts/PaintingsContext';
 
 
 import Navigation from './components/Navigation/Navigation';
-import Homepage from './components/Homepage/Homepage'
+import Homepage from './components/Homepage/Homepage.js'
 import CatalogAbstract from './components/CatalogAbstract/CatalogAbstract';
 import CatalogOthers from './components/CatalogOthers/CatalogOthers';
 import DetailsPage from './components/DetailsPage/DetailsPage';

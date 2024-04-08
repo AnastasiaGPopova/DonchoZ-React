@@ -1,11 +1,10 @@
 .homePageMain {
   margin-top: 2rem;
   margin-left: 25rem; 
-  margin-right: 5rem;
   }
   
   .homePageMain div {
-    margin: 4.5rem auto;
+    margin: 4.5rem 0;
     display: flex;
     justify-content: center; /* Horizontally center */
     align-items: center; /* Vertically center */

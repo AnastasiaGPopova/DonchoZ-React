@@ -17,7 +17,7 @@
     width: 100%; /* Take up full width */
     height: auto; /* Allow content to determine height */
     padding: 10px; /* Adjust padding */
-    text-align: center; /* Center-align text */
+    text-align: left; /* Center-align text */
   }
 }
 

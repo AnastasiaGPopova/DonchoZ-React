@@ -1,14 +1,16 @@
-import Spinner from 'react-bootstrap/Spinner';
+import CircleLoader from "react-spinners/CircleLoader ";
 
-function SizesExample() {
-  return (
-    <>
-      <Spinner animation="border" size="sm" />
-      <Spinner animation="border" />
-      <Spinner animation="grow" size="sm" />
-      <Spinner animation="grow" />
-    </>
-  );
+const override = { position: "fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)", background: "transperant" };
+
+function Spinner(){
+return (
+    
+<CircleLoader 
+color="#ffffff" 
+cssOverride={override}
+size={150}
+/>
+)
 }
 
-export default SizesExample;
+export default Spinner

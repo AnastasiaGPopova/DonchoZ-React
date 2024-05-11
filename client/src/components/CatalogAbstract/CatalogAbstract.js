@@ -13,6 +13,7 @@ function CatalogAbstract() {
   );
 
   console.log(paintingsAbstract);
+  console.log(`Is it loading ---> ${loading}`)
 
   return (
     <main className={styles.CatalogMain}>

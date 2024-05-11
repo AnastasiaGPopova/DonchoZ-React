@@ -29,7 +29,7 @@ function App() {
   const [paintingsOthers, setPaintingsOthers] = useState([]);
   const [errorMessages, setErrorMessages] = useState(null);
   const [isChanged, setIsChanged] = useState(null);
-  const [loading, setLoading]= useState(false)
+  const [loading, setLoading]= useState(true)
 
   useEffect(() => {
     if (localStorage.getItem('authToken') !== null) {
@@ -43,6 +43,7 @@ function App() {
   useEffect(() => {
     async function getAllRecords() {
       console.log(`Is triggered`)
+      console.log(loading)
       try {
         setLoading(true)
         const allPaints = await data.getPaintings();

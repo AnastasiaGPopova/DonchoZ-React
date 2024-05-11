@@ -43,7 +43,6 @@ function App() {
   useEffect(() => {
     async function getAllRecords() {
       console.log(`Is triggered`)
-      console.log(loading)
       try {
         setLoading(true)
         const allPaints = await data.getPaintings();

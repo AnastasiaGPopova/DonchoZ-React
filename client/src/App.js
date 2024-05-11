@@ -57,7 +57,7 @@ function App() {
         setPaintingsHorizonts(horizonPics)
         console.log(horizonPics)
         console.log(`LOADING ${loading}`)
-      //  setLoading(false)
+        setLoading(false)
       } catch (error) {
         console.log(error);
       }

@@ -28,7 +28,7 @@ function CatalogAbstract() {
 
         {/* Conditionally render the spinner only if loading is true */}
         {loading ? (
-          <Spinner />
+          <Spinner loading={loading}/>
         ) : (
           <div className={styles.gallery}>
             {paintingsAbstract.map((x, index) => {

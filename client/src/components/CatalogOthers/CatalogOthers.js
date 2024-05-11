@@ -18,7 +18,7 @@ function CatalogOthers() {
 
         {/* Conditionally render the spinner only if loading is true */}
         {loading ? (
-          <Spinner />
+          <Spinner loading={loading}/>
         ) : (
           <div className={styles.gallery}>
             {paintingsOthers.map((x, index) => {

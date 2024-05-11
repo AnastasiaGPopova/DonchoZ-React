@@ -1,4 +1,4 @@
-import CircleLoader from "react-spinners/CircleLoader ";
+import {CircleLoader} from "react-spinners";
 
 const override = { position: "fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)", background: "transperant" };
 

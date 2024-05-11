@@ -29,7 +29,7 @@ function App() {
   const [paintingsOthers, setPaintingsOthers] = useState([]);
   const [errorMessages, setErrorMessages] = useState(null);
   const [isChanged, setIsChanged] = useState(null);
-  const [loading, setLoading]= useState(true)
+  const [loading, setLoading]= useState(false)
 
   useEffect(() => {
     if (localStorage.getItem('authToken') !== null) {

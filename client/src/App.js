@@ -47,7 +47,6 @@ function App() {
         setLoading(true)
         const allPaints = await data.getPaintings();
         setAllPaintings(allPaints);
-        setLoading(false)
         const abstractPics = allPaints.filter(x => x.genre.includes("abstract"))
         setPaintingsAbstract(abstractPics)
         const otherPics = allPaints.filter(x => x.genre.includes("other"))
@@ -56,6 +55,7 @@ function App() {
         console.log(`horizonPics`)
         setPaintingsHorizonts(horizonPics)
         console.log(horizonPics)
+        setLoading(false)
       } catch (error) {
         console.log(error);
       }

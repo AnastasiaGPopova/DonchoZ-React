@@ -63,7 +63,7 @@ function App() {
       }
     }
     getAllRecords();
-  }, [isChanged, loading]);
+  }, [isChanged]);
 
 
 

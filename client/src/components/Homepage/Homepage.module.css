@@ -1,17 +1,35 @@
 .homePageMain {
   margin-top: 2rem;
-  margin-left: 25rem; 
-  }
-  
-  .homePageMain div {
-    margin: 4.5rem 0;
-    display: flex;
-    justify-content: center; /* Horizontally center */
-    align-items: center; /* Vertically center */
-  }
-  
+  margin-left: 25rem;
+}
 
-.homePageMain div img{
-    width: 1200px; /* Adjust the width as needed */
+.homePageMain div {
+  margin: 4.5rem 0;
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 1200px) {
+  .homePageMain {
+    margin-left: 5%; /* Adjust margin for smaller screens */
+  }
+
+  .homePageMain div {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+  }
+
+  .homePageMain div img {
+    width: 100%; /* Make the image responsive to its container */
+    max-width: 100%; /* Ensure the image does not exceed its container width */
     height: auto; /* Automatically adjust height to maintain aspect ratio */
+  }
+}
+
+/* Adjustments for even smaller screens */
+@media (max-width: 768px) {
+  .homePageMain {
+    margin-left: 2%; /* Further adjust margin for smaller screens */
+  }
 }

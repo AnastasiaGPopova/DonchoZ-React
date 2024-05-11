@@ -5,11 +5,9 @@ import {CircleLoader} from "react-spinners";
 function Spinner(){
 return (
     
-<CircleLoader 
-color="#ffffff" 
+<CircleLoader color="#516561" 
 //cssOverride={override}
-size={150}
-/>
+size={150}/>
 )
 }
 

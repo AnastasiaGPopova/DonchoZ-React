@@ -1,6 +1,6 @@
 .homePageMain {
   margin-top: 2rem;
-  margin-left: 25rem; 
+  margin-left: 7rem; 
   }
   
   .homePageMain div {
@@ -12,6 +12,6 @@
   
 
 .homePageMain div img{
-    width: 1200px; /* Adjust the width as needed */
+    width: 1300px; /* Adjust the width as needed */
     height: auto; /* Automatically adjust height to maintain aspect ratio */
 }

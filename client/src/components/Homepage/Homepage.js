@@ -10,7 +10,7 @@ function Homepage() {
   return (
     <main className={styles.homePageMain}>
       <div>
-          <img src="https://drive.google.com/thumbnail?id=1xFCdzfUJ4ASxPLuka2_ardatW4JKfdmb&sz=w1000" alt="test"/>
+          <img src="https://drive.google.com/thumbnail?id=1uShljueie9gG8qZsyBjpptpg0R_vuTRN&sz=w1000" alt="test"/>
       </div>
     </main>
 

@@ -19,6 +19,23 @@
     padding: 10px; /* Adjust padding */
     text-align: left; /* Center-align text */
   }
+
+  /* Hide the ul containing individual navigation links on small screens */
+  .navbar ul {
+    display: none;
+  }
+
+  /* Show the NavDropdown on small screens */
+  .navDropdown {
+    display: block;
+  }
+}
+
+/* Hide the NavDropdown on screens larger than 768px */
+@media (min-width: 769px) {
+  .navDropdown {
+    display: none;
+  }
 }
 
 .headerNEW h2 a {
@@ -26,31 +43,7 @@
   text-decoration: none;
 }
 
-.navbar ul {
-  list-style-type: none;
-  z-index: 1;
-  padding: 0; /* Remove default padding */
-}
-
-.navbar ul li a {
-  color: black;
-  text-decoration: none;
-  font-size: 1.6rem;
-}
-
-.navbar ul li a .bold-a {
-  color: red;
-  text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.navbar ul li {
-  padding-bottom: 1rem;
-}
-
 /* Navigation.module.css */
-
 .active {
   font-weight: bold;
 }

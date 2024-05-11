@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import * as data from '../../api/data';
 import { useContext } from "react";
 import { PaintingsContext } from "../../contexts/PaintingsContext";
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 
 function Navigation(){
@@ -45,7 +46,20 @@ function Navigation(){
                         </>) : ''
                     } 
 
+
+                    <NavDropdown title="Menu" id="basic-nav-dropdown" className={styles.navDropdown}>
+                    <NavLink to="/abstract" activeClassName={styles.active} className={activeMenuItem === 'abstract' ? styles.bold : ''}>Abstract Series</NavLink>
+                    <NavLink to="/horizons" activeClassName={styles.active} className={activeMenuItem === 'horizons' ? styles.bold : ''}>Horizons Series</NavLink>
+                    <NavLink to="/other" activeClassName={styles.active} className={activeMenuItem === 'other' ? styles.bold : ''}>Other Works</NavLink>
+                    <NavLink to="/press" activeClassName={styles.active} className={activeMenuItem === 'press' ? styles.bold : ''}>Press</NavLink>
+                    <NavLink to="/online-galleries" activeClassName={styles.active} className={activeMenuItem === 'online-galleries' ? styles.bold : ''}>Online Galleries</NavLink>
+                    <NavLink to="/about" activeClassName={styles.active} className={activeMenuItem === 'about' ? styles.bold : ''}>About</NavLink>
+                    <NavLink to="/contacts" activeClassName={styles.active} className={activeMenuItem === 'contacts' ? styles.bold : ''}>Contacts</NavLink>
+                    </NavDropdown>
+
                 </ul>
+
+
             </nav>
         </div>
     )

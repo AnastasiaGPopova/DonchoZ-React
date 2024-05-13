@@ -106,6 +106,7 @@
   }
   .smallercreens{
     display: block;
+    z-index: 2;
   }
   
   .navbar {

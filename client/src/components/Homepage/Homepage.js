@@ -9,7 +9,8 @@ function Homepage() {
 
   return (
     <main className={styles.homePageMain}>
-          <img src="https://drive.google.com/thumbnail?id=1uShljueie9gG8qZsyBjpptpg0R_vuTRN&sz=w1000" alt="test"/>
+          {/* <img src="https://drive.google.com/thumbnail?id=1uShljueie9gG8qZsyBjpptpg0R_vuTRN&sz=w1000" alt="test"/> */}
+          <div className={styles.backgroundImage}></div>
     </main>
 
   )

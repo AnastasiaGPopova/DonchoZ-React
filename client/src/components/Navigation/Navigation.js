@@ -39,7 +39,6 @@ function Navigation() {
   return (
     <div className={styles.headerNEW}>
       <nav className={styles.navbar}>
-      {isOverlayVisible && <div className={styles.overlay}></div>} {/* Add overlay */}
         <h2>
           <NavLink to="/" activeclassname={styles.active}>
             Doncho Zahariev

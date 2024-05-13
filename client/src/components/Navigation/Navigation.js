@@ -38,8 +38,7 @@ function Navigation() {
 
   return (
     <div className={styles.headerNEW}>
-      <nav className={styles.navbar}>
-        <h2>
+      <nav className={`${styles.navbar} ${isDropdownOpen ? styles.withShadow : ''}`}>        <h2>
           <NavLink to="/" activeclassname={styles.active}>
             Doncho Zahariev
           </NavLink>

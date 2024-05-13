@@ -11,6 +11,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 function Navigation() {
   const [activeMenuItem, setActiveMenuItem] = useState(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   const { isLogged, setIsLogged } = useContext(PaintingsContext);
 
   console.log(isDropdownOpen)
@@ -26,15 +27,19 @@ function Navigation() {
   const handleMenuItemClick = (menuItem) => {
     setActiveMenuItem(menuItem);
     setIsDropdownOpen(false); // Close the dropdown when a menu item is clicked
+    setIsOverlayVisible(false); // Hide overlay when dropdown is closed
+
   };
 
   const toggleDropdown = () => {
     setIsDropdownOpen(prevState => !prevState);
+    setIsOverlayVisible(prevState => !prevState); // Toggle overlay visibility
   };
 
   return (
     <div className={styles.headerNEW}>
       <nav className={styles.navbar}>
+      {isOverlayVisible && <div className={styles.overlay}></div>} {/* Add overlay */}
         <h2>
           <NavLink to="/" activeclassname={styles.active}>
             Doncho Zahariev

@@ -103,8 +103,7 @@
     text-align: left;
     height:fit-content;
     padding-top: 1rem;
-    padding-bottom: 1rem;
-    width: 70%;
+    padding-bottom: 0.7rem;
     z-index: 2;
   }
   

@@ -29,3 +29,21 @@
 .articleAbout ul li {
   font-size: 1.6rem;
 }
+
+
+/* Adjustments for small screens */
+@media (max-width: 768px) {
+  .aboutpageMain {
+    margin: 2rem 1.5rem;
+  }
+
+  .aboutpageMain div  {
+    margin: 9rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: left; /* Horizontally center */
+    align-items: flex-start; /* Vertically center */
+    margin-bottom: 0rem;
+  }
+  
+}

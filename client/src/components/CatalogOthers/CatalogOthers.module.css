@@ -62,3 +62,24 @@
     grid-template-columns: repeat(1, 1fr); /* 1 column for even smaller screens */
   }
 }
+
+
+/* Adjustments for small screens */
+@media (max-width: 768px) {
+  .CatalogMain {
+    margin: 2rem 1.5rem;
+  }
+
+  .catalogContainer1 {
+    display: flex;
+    margin: 9rem auto;
+    flex-direction: column;
+    justify-content: center; /* Horizontally center */
+    align-items: start; /* Vertically center */
+  }
+  
+  .gallery {
+    column-count: 1;
+    width: 200%;
+  }
+}

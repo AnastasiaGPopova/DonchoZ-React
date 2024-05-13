@@ -20,3 +20,21 @@
 .galleriesMainPage div h3{
   font-size: 2.2em;
 }
+
+
+
+@media (max-width: 768px) {
+  .galleriesMainPage {
+    margin: 2rem 1.5rem;
+  }
+
+  .galleriesMainPage div {
+    margin: 9rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: left; /* Horizontally center */
+    align-items: flex-start; /* Vertically center */
+    gap: 20px
+  }
+  
+}

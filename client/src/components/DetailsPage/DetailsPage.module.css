@@ -120,5 +120,13 @@
     height: 80%; 
   }
 
-  
+  .detailsContainer{
+    z-index: -1;
+  }
+  .navbarDetails{
+    text-align: left;
+    top: 50rem;
+    width: 220px;
+    z-index: 2;
+  }
 }

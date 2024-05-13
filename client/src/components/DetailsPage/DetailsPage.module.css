@@ -23,6 +23,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    padding-bottom: 1rem;
 
   }
 
@@ -101,4 +102,23 @@
 }
 .btnedit:hover{
   background-color: lightgray;
+}
+
+
+
+/* Adjustments for small screens */
+@media (max-width: 768px) {
+  .detailsMain {
+    margin: 2rem 1.5rem;
+  }
+
+  .imageContainer {
+    display: flex;
+    margin: 9rem auto;
+    justify-content: center;
+    align-items: center;
+    height: 80%; 
+  }
+
+  
 }

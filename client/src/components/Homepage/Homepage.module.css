@@ -15,3 +15,11 @@
     width: 2000px; /* Adjust the width as needed */
     height: auto; /* Automatically adjust height to maintain aspect ratio */
 }
+
+@media (max-width: 768px) {
+  .homePageMain {
+    margin-left: 0rem;
+    padding-left: 0rem;
+    padding-top: 10rem;
+}
+}

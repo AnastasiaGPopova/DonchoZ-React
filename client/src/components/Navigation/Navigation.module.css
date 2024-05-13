@@ -21,6 +21,7 @@
   list-style-type: none;
   z-index: 2;
   padding: 0; /* Remove default padding */
+  margin: 0;
 }
 
 .navbar ul li a {
@@ -100,13 +101,14 @@
   .navbar {
     text-align: left;
     height:fit-content;
-    padding-top: 2rem;
+    padding-top: 1rem;
     padding-bottom: 1rem;
     width: 50%;
     z-index: 2;
   }
 
-  .navbar {
+
+  .navbar ul {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adjust values as needed */
   }
 }

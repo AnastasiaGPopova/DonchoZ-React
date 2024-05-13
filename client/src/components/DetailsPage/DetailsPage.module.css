@@ -121,7 +121,7 @@
   }
 
   .detailsContainer{
-    z-index: -1;
+    z-index: 2;
   }
   .navbarDetails{
     text-align: left;

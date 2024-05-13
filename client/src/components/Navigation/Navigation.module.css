@@ -106,7 +106,7 @@
   }
   .smallercreens{
     display: block;
-    z-index: 2;
+    z-index: 0;
   }
   
   .navbar {
@@ -114,7 +114,7 @@
     height:fit-content;
     padding-top: 1rem;
     padding-bottom: 0.7rem;
-    z-index: 2;
+    z-index: 0;
   }
   
 }

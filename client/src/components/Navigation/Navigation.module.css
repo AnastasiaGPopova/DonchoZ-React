@@ -22,9 +22,7 @@
   z-index: 2;
   padding: 0; /* Remove default padding */
 }
-.navbar ul {
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adjust values as needed */
-}
+
 .navbar ul li a {
   color: black;
   text-decoration: none;
@@ -110,5 +108,9 @@
 
   .navbar ul li {
     padding-bottom: 0.5rem;
+  }
+
+  .navbar ul {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adjust values as needed */
   }
 }

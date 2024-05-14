@@ -8,9 +8,27 @@ import SinglePainting from "../SinglePainting/SinglePainting";
 import Spinner from "../../utils/Spinner";
 
 function CatalogHorizons() {
-  const { paintingsHorizonts, loading, setLoading } = useContext(
+  const { paintingsHorizonts, setPaintingsHorizonts, loading, setLoading } = useContext(
     PaintingsContext
   );
+
+  useEffect(() => {
+    async function getAllRecords() {
+      console.log(`Is triggered`)
+      try {
+        setLoading(true)
+        const allPaintsHorizonts = await data.getPaintingsByGanre({item:"horizon"});
+        setPaintingsHorizonts(allPaintsHorizonts)
+        console.log(`Paintings Horizons`)
+        console.log(allPaintsHorizonts)
+        setLoading(false)
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    getAllRecords();
+  }, [isChanged]);
+  
   console.log(paintingsHorizonts);
 
   return (

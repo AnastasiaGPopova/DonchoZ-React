@@ -40,29 +40,29 @@ function App() {
     }
   }, []);
 
-  useEffect(() => {
-    async function getAllRecords() {
-      console.log(`Is triggered`)
-      try {
-        setLoading(true)
-        const allPaints = await data.getPaintings();
-        setAllPaintings(allPaints);
-        const abstractPics = allPaints.filter(x => x.genre.includes("abstract"))
-        setPaintingsAbstract(abstractPics)
-        const otherPics = allPaints.filter(x => x.genre.includes("other"))
-        setPaintingsOthers(otherPics)
-        const horizonPics = allPaints.filter(x => x.genre.includes("horizon"))
-        console.log(`horizonPics`)
-        setPaintingsHorizonts(horizonPics)
-        console.log(horizonPics)
-        console.log(`LOADING ${loading}`)
-        setLoading(false)
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    getAllRecords();
-  }, [isChanged]);
+  // useEffect(() => {
+  //   async function getAllRecords() {
+  //     console.log(`Is triggered`)
+  //     try {
+  //       setLoading(true)
+  //       const allPaints = await data.getPaintings();
+  //       setAllPaintings(allPaints);
+  //       const abstractPics = allPaints.filter(x => x.genre.includes("abstract"))
+  //       setPaintingsAbstract(abstractPics)
+  //       const otherPics = allPaints.filter(x => x.genre.includes("other"))
+  //       setPaintingsOthers(otherPics)
+  //       const horizonPics = allPaints.filter(x => x.genre.includes("horizon"))
+  //       console.log(`horizonPics`)
+  //       setPaintingsHorizonts(horizonPics)
+  //       console.log(horizonPics)
+  //       console.log(`LOADING ${loading}`)
+  //       setLoading(false)
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   }
+  //   getAllRecords();
+  // }, [isChanged]);
 
 
 

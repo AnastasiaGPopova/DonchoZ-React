@@ -14,6 +14,20 @@ router.get("/", async (req, res) => {
 });
 
 
+router.get("/other", async (req, res) => {
+  console.log(`TEST other`)
+  try {
+    const paintingsOther = await paintingManager.getbyGenre("other");
+    console.log(paintingsOther)
+    res.json(paintingsOther);
+  } catch (error) {
+    res.json(parser.parseError(error))
+  }
+});
+
+
+
+
 
 
 router.get("/:paintingsId", async (req, res) => {

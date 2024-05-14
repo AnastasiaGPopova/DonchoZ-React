@@ -8,8 +8,25 @@ import SinglePainting from "../SinglePainting/SinglePainting";
 import Spinner from "../../utils/Spinner";
 
 function CatalogOthers() {
-  const { paintingsOthers, loading, setLoading } = useContext(PaintingsContext);
+  const { paintingsOthers, loading, setLoading,
+    setPaintingsOthers } = useContext(PaintingsContext);
 
+  useEffect(() => {
+    async function getAllRecords() {
+      console.log(`Is triggered`)
+      try {
+        setLoading(true)
+        const allPaintsOther = await data.getPaintingsOther();
+        setPaintingsOthers(allPaintsOther)
+        console.log(`Paintings Other`)
+        console.log(paintingsOthers)
+        setLoading(false)
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    getAllRecords();
+  }, [paintingsOthers, setLoading, setPaintingsOthers]);
   return (
     <main className={styles.CatalogMain}>
       <div className={styles.catalogContainer1}>

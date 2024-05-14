@@ -3,7 +3,7 @@ const Painting = require('../models/Painting');
 exports.getAllRecordsByOwner = (ownerId) => Painting.find({ "_ownerId": `${ownerId}` })
 
 
-// exports.getAll =() => Record.find()
+
 
 exports.getOne = (id) => Painting.findById(id);
 
@@ -176,8 +176,6 @@ exports.getbyGenre = (item) => Painting.find({ "genre": { "$regex": `${item}`, "
 // exports.getSearchedbyYear1980andOlder = () => Record.find(
 //     { "year": {$lt: 1980} }
 // );
-
-exports.getbyGenre = (item) => Record.find({ "genre": { "$regex": `${item}`, "$options": "i" } })
 
 //exports.getbyRPM = (item) => Record.find({ "rpm": `${item}` })
 

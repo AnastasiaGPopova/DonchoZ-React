@@ -8,7 +8,7 @@ import SinglePainting from "../SinglePainting/SinglePainting";
 import Spinner from "../../utils/Spinner";
 
 function CatalogOthers() {
-  const { paintingsOthers, loading, setLoading,
+  const { paintingsOthers, loading, setLoading, isChanged,
     setPaintingsOthers } = useContext(PaintingsContext);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ function CatalogOthers() {
       }
     }
     getAllRecords();
-  }, [paintingsOthers, setLoading, setPaintingsOthers]);
+  }, [paintingsOthers, isChanged, setPaintingsOthers]);
   return (
     <main className={styles.CatalogMain}>
       <div className={styles.catalogContainer1}>

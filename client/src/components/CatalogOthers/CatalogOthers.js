@@ -16,7 +16,7 @@ function CatalogOthers() {
       console.log(`Is triggered`)
       try {
         setLoading(true)
-        const allPaintsOther = await data.getPaintingsOther();
+        const allPaintsOther = await data.getPaintingsByGanre({item:"other"});
         setPaintingsOthers(allPaintsOther)
         console.log(`Paintings Other`)
         console.log(paintingsOthers)
@@ -26,7 +26,7 @@ function CatalogOthers() {
       }
     }
     getAllRecords();
-  }, [paintingsOthers, isChanged, setPaintingsOthers]);
+  }, [isChanged]);
   return (
     <main className={styles.CatalogMain}>
       <div className={styles.catalogContainer1}>

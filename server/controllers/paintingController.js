@@ -14,10 +14,11 @@ router.get("/", async (req, res) => {
 });
 
 
-router.get("/other", async (req, res) => {
+router.post("/query", async (req, res) => {
   console.log(`TEST other`)
+  const {item} = req.body;
   try {
-    const paintingsOther = await paintingManager.getbyGenre("other");
+    const paintingsOther = await paintingManager.getbyGenre(item);
     console.log(paintingsOther)
     res.json(paintingsOther);
   } catch (error) {

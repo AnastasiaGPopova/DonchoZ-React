@@ -15,8 +15,8 @@ export async function getPaintings() {
     return await api.get(host + '/paintings');
 }
 
-export async function getPaintingsOther() {
-    return await api.get(host + '/paintings/other');
+export async function getPaintingsByGanre(item) {
+    return await api.post(host + '/paintings/query', item);
 }
 
 

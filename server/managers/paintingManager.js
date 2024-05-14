@@ -17,7 +17,7 @@ exports.update = (id, paintingID) => Painting.findByIdAndUpdate(id, paintingID, 
 
 exports.delete = (id) => Painting.findByIdAndDelete(id);
 
-exports.getbyGenre = (item) => Record.find({ "genre": { "$regex": `${item}`, "$options": "i" } })
+exports.getbyGenre = (item) => Painting.find({ "genre": { "$regex": `${item}`, "$options": "i" } })
 
 
 

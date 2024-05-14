@@ -21,6 +21,7 @@ router.get("/other", async (req, res) => {
     console.log(paintingsOther)
     res.json(paintingsOther);
   } catch (error) {
+    console.log(error)
     res.json(parser.parseError(error))
   }
 });

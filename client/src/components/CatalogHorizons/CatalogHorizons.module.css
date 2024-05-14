@@ -46,7 +46,7 @@
 
 @media (max-width: 768px) {
   .singlePainting {
-    width: calc(50% - 20px); /* Adjust width for 2 items per row with gap on smaller screens */
+    width: 100%; /* Adjust width for 2 items per row with gap on smaller screens */
   }
 }
 
@@ -80,7 +80,7 @@
 
   .gallery {
     column-count: 1;
-    width: 200%;
+    width: 100%;
   }
   
 }

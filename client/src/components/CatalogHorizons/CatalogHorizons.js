@@ -8,7 +8,7 @@ import SinglePainting from "../SinglePainting/SinglePainting";
 import Spinner from "../../utils/Spinner";
 
 function CatalogHorizons() {
-  const { paintingsHorizonts, setPaintingsHorizonts, loading, setLoading } = useContext(
+  const { paintingsHorizonts, setPaintingsHorizonts, loading, setLoading, isChanged } = useContext(
     PaintingsContext
   );
 

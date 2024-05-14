@@ -8,9 +8,26 @@ import SinglePainting from "../SinglePainting/SinglePainting";
 import Spinner from "../../utils/Spinner";
 
 function CatalogAbstract() {
-  const { paintingsAbstract, loading, setLoading } = useContext(
+  const { paintingsAbstract, loading, setLoading, isChanged, setPaintingsAbstract } = useContext(
     PaintingsContext
   );
+
+  useEffect(() => {
+    async function getAllRecords() {
+      console.log(`Is triggered`)
+      try {
+        setLoading(true)
+        const allPaintsAbstracts = await data.getPaintingsByGanre({item:"abstract"});
+        setPaintingsAbstract(allPaintsAbstracts)
+        console.log(`Paintings Abstracts`)
+        console.log(allPaintsAbstracts)
+        setLoading(false)
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    getAllRecords();
+  }, [isChanged]);
 
 
   return (

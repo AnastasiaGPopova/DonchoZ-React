@@ -114,7 +114,7 @@
     z-index: 0;
   }
 
-  .smallercreensUL{
+  .navbar .largeScreen, .navbar .smallercreensUL{
     padding-top: 1rem;
 
   }

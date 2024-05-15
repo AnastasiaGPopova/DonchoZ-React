@@ -51,7 +51,7 @@ function ContactsPage() {
 
         <a href="mailto:donchozahariev@abv.bg">
         <FontAwesomeIcon icon={faFacebook} className={styles.icon} />
-        https://www.facebook.com/profile.php?id=100085924557248
+        https://www.facebook.com/doncho.zahariev.artist/
         </a>
       </div>
 

@@ -89,7 +89,6 @@
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  padding-bottom: 0.3rem;
 }
 
 .buttonMenu a{
@@ -113,6 +112,11 @@
   .smallercreens{
     display: block;
     z-index: 0;
+  }
+
+  .smallercreens ul{
+    padding-top: 1rem;
+
   }
   
   .navbar {
